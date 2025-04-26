@@ -2,40 +2,277 @@ html,
 body {
 	padding: 0;
 	margin: 0;
-	background: transparent;
+	background: rgb(241, 239, 236);
 }
 
 /* Use OS default fonts */
-body {
+body,
+html {
 	font-family:
 		system-ui,
 		-apple-system,
-		'Segoe UI',
+		Segoe UI,
 		Roboto,
 		Helvetica,
 		Arial,
-		sans-serif,
+		'sans-serif',
 		'Apple Color Emoji',
 		'Segoe UI Emoji';
 	text-rendering: optimizeLegibility;
 	font-feature-settings: 'liga', 'clig', 'kern';
+	color: rgb(3, 3, 3);
 }
 
-header {
-	position: absolute;
-	width: 500px;
-	height: 250px;
-	top: 50%;
-	left: 50%;
-	margin-top: -125px;
-	margin-left: -250px;
+/* NAV */
+
+nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color:  rgb(209, 155, 102);
+	padding: 10px;
+}
+
+nav section{	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	border-radius: 30px;
+	background-color: rgb(230, 227, 224);
+	height: 50px;
+	width: 400px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav p {
+	font-family: inherit;
+	display: block;
+	padding: 10px 20px;
+	text-decoration: none;
+	color: #333;
 	text-align: center;
+	max-width: 50%;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+/* HEADER */
+
+header {
+	width: auto;
+	height: 100px;
+	text-align: center;
+	margin: 0 auto;
+	padding: 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 header h1 {
-	font-size: 60px;
-	font-weight: 200;
+	font-size: 40px;
+	font-weight: 400;
 	margin: 0;
 	padding: 0;
 	opacity: 0.7;
+	padding: 20px;
+	width: 100%;
+	height: 40%;
+}
+
+header section {
+	border-radius: 30px;
+	background-color: rgb(212, 201, 190);
+	height: 35px;
+	width: 60%;
+	gap: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	padding: 10px;
+	gap: 5px;
+}
+
+header label {
+	font-size: 14px;
+	font-weight: 300;
+	margin: 0;
+	padding: 0;
+	opacity: 0.9;
+	padding: 10px 2px 10px 0;
+}
+
+header input {
+	border: none;
+	background-color: white;
+	outline: none;
+	font-size: 14px;
+	font-weight: 300;
+	margin: 0;
+	padding: 10px;
+	border-radius: 30px;
+	text-align: center;
+	opacity: 0.7;
+}
+
+header input[id="page-frames"] {
+	margin-right: 30px;
+}
+
+header input[id="reference-page-string"]{
+	width: 250px;
+}
+
+section img {
+	height: 25px;
+	opacity: 0.6;
+}
+
+section img:hover {
+	cursor: pointer;
+	transition: all 0.3s ease;
+	opacity: 1;
+	height: 26px;
+}
+
+header button{
+	font-family: inherit;
+	display: block;
+	padding: 10px 20px;
+	text-decoration: none;
+	color: #333;
+	text-align: center;
+	width: 20%;
+	font-size: 14px;
+	font-weight: 400;
+	background-color: rgb(209, 155, 102);
+	border-radius: 30px;
+	border: none;
+	cursor: pointer;
+	margin: 10px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header button:hover{
+	background-color: rgb(205, 130, 55);
+	transition: all 0.3s ease;
+	color: rgb(0, 0, 0);
+	opacity: 1;
+}
+
+#error-message{
+	font-size: 14px;
+	font-weight: 300;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	text-align: center;
+	height: 15%;
+	border-radius: 10px;
+	color: red;
+	width: 100%;
+}
+
+/* MAIN */
+main {
+	width: auto;
+	height: 100%;
+	text-align: center;
+	margin: 0 auto;
+	padding: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 30px;
+}
+
+main section{
+	border-radius: 10px;
+	background-color: rgb(212, 201, 190);
+	height: 280px;
+	width: 90%;
+	gap: 20px;
+	display: flex;
+	flex-direction: column;
+	padding: 10px 15px;
+	gap: 10px;
+}
+
+main section h2 {
+	font-size: 28px;
+	font-weight: 400;
+	height: 10%;
+	margin: 0;
+	padding: 0;
+	opacity: 0.7;
+	padding: 10px;
+}
+
+main section p{
+	font-size: 14px;
+	font-weight: 300;
+	margin: 0;
+	opacity: 0.9;
+	text-align: center;
+	height: 15%;
+	border-radius: 10px;
+	display: flex;
+	align-items: right;
+	justify-content: right;
+}
+
+main section p > span{
+	width: 20%;
+	margin: 0;
+	background-color:  rgb(209, 155, 102);
+	border-radius: 20px;
+	display: flex;
+	text-align: center;
+	justify-self: center;
+}
+
+main section p #page-faults, 
+main section p #page-faults-result{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+	font-weight: 300;
+	border-radius: 10px;
+	width: 100%;
+}
+
+main section p #page-faults{
+	border-radius: 10px 0 0 10px;
+}
+
+main section p #page-faults-result{
+	border-radius: 0px 10px 10px 0px;
+
+}
+
+main section > div{
+	height: 85%;
+	width: 100%;
+	background-color: rgb(244, 241, 239);
+	border-radius: 10px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main section > div #page{
+	height: 85%;
+	width: calc(100% / 20);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: sandybrown;
+	border-radius: 15px;
 }
