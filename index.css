@@ -92,7 +92,7 @@ header section {
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
-	padding: 10px;
+	padding: 15px;
 	gap: 5px;
 }
 
@@ -193,8 +193,8 @@ main {
 main section{
 	border-radius: 10px;
 	background-color: rgb(212, 201, 190);
-	height: 280px;
-	width: 90%;
+	height: 340px;
+	width: 95%;
 	gap: 20px;
 	display: flex;
 	flex-direction: column;
@@ -255,24 +255,49 @@ main section p #page-faults-result{
 
 }
 
-main section > div{
-	height: 85%;
-	width: 100%;
+main section .simulation{
+	height: 100%;
+	width: 98%;
 	background-color: rgb(244, 241, 239);
 	border-radius: 10px;
 	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+	border: #333;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	flex-direction: column;
+	gap: 5px;
+	padding: 7px 15px;
 }
 
-main section > div #page{
-	height: 85%;
-	width: calc(100% / 20);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	background-color: sandybrown;
-	border-radius: 15px;
+/* PAGE */
+main section .simulation #string-container {
+    height: 20%;
+	width: 100%;
+    border-radius: 15px;
+    display: flex;
+	gap: 5px;
 }
+
+main section .simulation #string-container #string{
+	height: 100%;
+	border-radius: 15px;
+	border-color: #333;
+	background-color: rgb(209, 155, 102);
+	width: calc(100% / 20);
+}
+
+main section .simulation #page-container{
+    height: 80%;
+	width: 100%;
+    display: flex;
+    border-radius: 15px;
+	gap: 5px;
+	
+}
+
+main section .simulation #page-container #page{
+	height: 100%;
+	border-radius: 15px;
+	background-color: rgb(209, 155, 102);
+	width: calc(100% / 20);
+}
+

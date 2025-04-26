@@ -61,3 +61,35 @@ function generateReferenceString(length = 20, pageRange = 10) {
         errorMessage.style.opacity = '0';
     }
 });
+
+// CREATE 20 PAGES
+function createSimulationDivs(simulation) {
+  simulation.innerHTML = ''; // Clear existing contents
+
+  const stringContainer = document.createElement('div');
+  stringContainer.id = 'string-container';
+
+  for (let i = 0; i < 20; i++) {
+    const stringDiv = document.createElement('div');
+    stringDiv.id = 'string';
+    stringContainer.appendChild(stringDiv);
+  }
+
+  const pageContainer = document.createElement('div');
+  pageContainer.id = 'page-container';
+  for (let i = 0; i < 20; i++) {
+    const pageDiv = document.createElement('div');
+    pageDiv.id = 'page';
+    pageContainer.appendChild(pageDiv);
+  }
+
+  simulation.appendChild(stringContainer);
+  simulation.appendChild(pageContainer);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const simulations = document.querySelectorAll('.simulation');
+  simulations.forEach(simulation => {
+    createSimulationDivs(simulation);
+  });
+});
