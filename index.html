@@ -28,54 +28,79 @@
 			<main>
 				<section class="algorithm">
 					<h2>First-In-First-Out (FIFO) Algorithm</h2>
-					<div class="simulation">
-						<div id="string-container">
-							<div id="string"></div>
+					<div class="simulation" id="fifo">
+						<div class="string-container">
+							<div class="string"></div>
 						</div>
-						<div id="page-container">
-							<div id="page"></div>
+						<div class="page-container">
+							<div class="page">
+								<div class="page-results">ehheheheheehe</div>
+							</div>
 						</div>
 					</div>
 					<p>
 						<span>
-							<span id="page-faults">Faults: </span> <span id="page-faults-result">0</span>
+							<span id="page-faults">Page Faults: </span> <span class="page-faults-result" id="fifo-page-faults-result">0</span>
 						</span>
 					</p>				
 				</section>
 				<section class="algorithm">
 					<h2>Last Recently Used (LRU) Algorithm</h2>
-					<div class="simulation">
-						<div id="string-container">
-							<div id="string"></div>
+					<div class="simulation" id="lru">
+						<div class="string-container">
+							<div class="string"></div>
 						</div>
-						<div id="page-container">
-							<div id="page"></div>
+						<div class="page-container">
+							<div class="page">
+								<div class="page-results"></div>
+							</div>
 						</div>
 					</div>
 					<p>
 						<span>
-							<span id="page-faults">Faults: </span> <span id="page-faults-result">0</span>
+							<span id="page-faults">Page Faults: </span> <span class="page-faults-result"id="lru-page-faults-result">0</span>
 						</span>
 					</p>				
 				</section>
-				<section class="algorithm">
+				<section class="algorithm" >
 					<h2>Optimal Algorithm</h2>
-					<div class="simulation">
-						<div id="string-container">
-							<div id="string"></div>
+					<div class="simulation" id="optimal">
+						<div class="string-container">
+							<div class="string"></div>
 						</div>
-						<div id="page-container">
-							<div id="page"></div>
+						<div class="page-container">
+							<div class="page">
+								<div class="page-results"></div>
+							</div>
 						</div>
 					</div>
 					<p>
 						<span>
-							<span id="page-faults">Faults: </span> <span id="page-faults-result">0</span>
+							<span id="page-faults">Page Faults: </span> <span class="page-faults-result" id="optimal-page-faults-result">0</span>
 						</span>
 					</p>
 				</section>
 				<section class="analysis">
 					<h2>Analysis</h2>
+					<table>
+						<tr>
+							<th>Algorithm</th>
+							<th>Page Fault</th>
+						</tr>
+						<tr>
+							<td>First-In-First-Out (FIFO)</td>
+							<td id="fifo-page-fault"></td>
+						</tr>
+						<tr>
+							<td>Last Recently Used (LRU)</td>
+							<td id="lru-page-fault"></td>
+						</tr>
+						<tr>
+							<td>Optimal</td>
+							<td id="optimal-page-fault"></td>
+						</tr>
+					</table>
+					<p id="text">The most efficient algorithm for accommodating 3 page frames with a reference page string of length 20 is: <b id="efficient-algo"></b></p>
 				</section>
 			</main>
 			<footer></footer>
