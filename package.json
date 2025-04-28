@@ -1,5 +1,5 @@
 {
-	"name": "Page-Replacement Algorithm Visualizer",
+	"name": "page-replacement-algorithm-visualizer",
 	"productName": "Page-Replacement Algorithm Visualizer",
 	"version": "0.0.1",
 	"description": "The best app ever",
@@ -29,7 +29,7 @@
 	},
 	"devDependencies": {
 		"electron": "^13.0.0",
-		"electron-builder": "^23.3.3",
+		"electron-builder": "^23.6.0",
 		"np": "^7.6.2",
 		"xo": "^0.51.0"
 	},
@@ -47,7 +47,19 @@
 		"releaseDraft": false
 	},
 	"build": {
-		"appId": "com.company.AppName",
+		"appId": "com.angelomiranda.page-replacement-algorithm-visualizer",
+		"productName": "Page Replacement Algorithm Visualizer",
+  		"directories": {
+    	"output": "dist"
+  		},
+  		"files": [
+    		"**/*"
+  		],
+  		"win": {
+    		"target": [
+      		"nsis"
+    		]
+		},
 		"mac": {
 			"category": "public.app-category.social-networking",
 			"darkModeSupport": true
