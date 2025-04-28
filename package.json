@@ -1,14 +1,14 @@
 {
-	"name": "app-name",
-	"productName": "App Name",
-	"version": "0.0.0",
+	"name": "Page-Replacement Algorithm Visualizer",
+	"productName": "Page-Replacement Algorithm Visualizer",
+	"version": "0.0.1",
 	"description": "The best app ever",
 	"license": "MIT",
 	"repository": "sindresorhus/electron-boilerplate",
 	"author": {
-		"name": "Your Name",
-		"email": "user@gmail.com",
-		"url": "https://sindresorhus.com"
+		"name": "Angelo Miranda",
+		"email": "angelo.miranda28@outlook.com",
+		"url": "https://angelomiranda.com"
 	},
 	"scripts": {
 		"postinstall": "electron-builder install-app-deps",

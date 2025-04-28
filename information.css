@@ -59,9 +59,8 @@ nav p {
 	border-radius: 30px;
 }
 
-nav p:hover{
+nav p:focus{
 	background-color: rgb(145, 177, 127);
-	transition: background-color 0.3s ease;
 }
 
 /* HEADER */
