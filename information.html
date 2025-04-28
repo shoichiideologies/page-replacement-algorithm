@@ -14,54 +14,32 @@
                 </section>
             </nav>
             <header>
-                <h1>Page-Replacement Algorithms</h1>
+                <section>
+                    <h1>Page-Replacement Algorithms</h1>
+                    <p>In modern computing, efficient memory management is critical for performance. One important technique is demand paging, where only the necessary parts of a program are loaded into memory as needed. However, when memory becomes full, the operating system must decide which page to remove to make space for a new one. This decision is made using page-replacement algorithms.
+                    Among the various algorithms, three are especially important: First-In, First-Out (FIFO), Optimal Page Replacement (OPT), and Least Recently Used (LRU).
+                    </p>
+                </section>
             </header>
             <main>
                 <section class="algorithm">
                     <h2>First-In-First-Out (FIFO) Algorithm</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ullam quis ab ducimus non labore earum nam aut eius, eveniet autem placeat, reiciendis voluptatem obcaecati nulla recusandae consectetur animi aspernatur!
-                    Molestias illo architecto consequuntur? Corporis dicta veritatis nam sunt hic! Quas exercitationem eum laboriosam tenetur accusamus laborum voluptatum, possimus, excepturi qui ipsam delectus. Magnam dignissimos molestias consectetur sunt aperiam temporibus!
-                    Iste sed voluptate ullam, at sequi explicabo molestiae tempore laudantium ipsam sunt delectus rerum natus cum eum quisquam asperiores illum officia exercitationem amet nesciunt optio. Laborum explicabo sit officia praesentium?
-                    Aliquid unde iusto vitae numquam commodi corporis vel eum, magnam aliquam odio animi ullam a odit officia laborum! Tempora assumenda aut reiciendis obcaecati, odit praesentium enim velit sapiente itaque delectus?
-                    Deleniti, neque earum! Dolores ipsum hic atque ad. Magni rem maiores facere est repellat illo, sequi aspernatur voluptatem fugiat veritatis veniam, praesentium aut? Expedita minima necessitatibus illo placeat tempore dolor.
-                    Quibusdam sunt eligendi voluptatum labore pariatur nisi laudantium. Laborum nesciunt rerum odit consectetur dicta, iusto voluptatem similique dolor, eius facilis fugit nemo fuga aliquam voluptatibus dolorem, tempora ratione et cum!
-                    Voluptatum quam quia perspiciatis laboriosam provident accusamus laudantium dolorem ipsa nam similique? Tenetur inventore aliquam perspiciatis facilis. Iste ex pariatur aliquid possimus, incidunt repudiandae inventore. Dolore perferendis minus tenetur fuga.
-                    Natus obcaecati exercitationem tempore architecto molestias nam recusandae ea alias repellendus in ipsum, odit magni quaerat accusantium minus beatae saepe aliquam impedit magnam quam voluptatibus eum dolor possimus laudantium. Itaque!
-                    Dolorem, sunt, aliquam atque quae magni aut quasi, hic voluptate aliquid dolor aperiam incidunt recusandae distinctio libero sapiente velit reprehenderit minus eos! Consequuntur, neque ex! Modi est nulla nobis sint!
-                    Rerum necessitatibus laudantium sed quasi quo voluptas nisi consectetur aspernatur libero cupiditate. Quaerat nostrum magnam vitae quam mollitia! Vitae molestiae nostrum sit nesciunt impedit nemo necessitatibus obcaecati modi itaque sequi.</p>
+                    <p>First-In, First-Out (FIFO) is the simplest page-replacement algorithm. It replaces the oldest page in memory—the one that was loaded first—whenever a new page needs to be brought in. FIFO treats pages like a queue: pages are added at the end and removed from the front. While easy to implement and understand, FIFO can perform poorly because it may evict frequently used pages. Moreover, FIFO suffers from Belady’s anomaly, where adding more memory could paradoxically increase the number of page faults instead of reducing them, making it an unreliable choice for certain workloads.</p>
                 </section>
                 <section class="algorithm">
                     <h2>Last Recently Used (LRU) Algorithm</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ullam quis ab ducimus non labore earum nam aut eius, eveniet autem placeat, reiciendis voluptatem obcaecati nulla recusandae consectetur animi aspernatur!
-                    Molestias illo architecto consequuntur? Corporis dicta veritatis nam sunt hic! Quas exercitationem eum laboriosam tenetur accusamus laborum voluptatum, possimus, excepturi qui ipsam delectus. Magnam dignissimos molestias consectetur sunt aperiam temporibus!
-                    Iste sed voluptate ullam, at sequi explicabo molestiae tempore laudantium ipsam sunt delectus rerum natus cum eum quisquam asperiores illum officia exercitationem amet nesciunt optio. Laborum explicabo sit officia praesentium?
-                    Aliquid unde iusto vitae numquam commodi corporis vel eum, magnam aliquam odio animi ullam a odit officia laborum! Tempora assumenda aut reiciendis obcaecati, odit praesentium enim velit sapiente itaque delectus?
-                    Deleniti, neque earum! Dolores ipsum hic atque ad. Magni rem maiores facere est repellat illo, sequi aspernatur voluptatem fugiat veritatis veniam, praesentium aut? Expedita minima necessitatibus illo placeat tempore dolor.
-                    Quibusdam sunt eligendi voluptatum labore pariatur nisi laudantium. Laborum nesciunt rerum odit consectetur dicta, iusto voluptatem similique dolor, eius facilis fugit nemo fuga aliquam voluptatibus dolorem, tempora ratione et cum!
-                    Voluptatum quam quia perspiciatis laboriosam provident accusamus laudantium dolorem ipsa nam similique? Tenetur inventore aliquam perspiciatis facilis. Iste ex pariatur aliquid possimus, incidunt repudiandae inventore. Dolore perferendis minus tenetur fuga.
-                    Natus obcaecati exercitationem tempore architecto molestias nam recusandae ea alias repellendus in ipsum, odit magni quaerat accusantium minus beatae saepe aliquam impedit magnam quam voluptatibus eum dolor possimus laudantium. Itaque!
-                    Dolorem, sunt, aliquam atque quae magni aut quasi, hic voluptate aliquid dolor aperiam incidunt recusandae distinctio libero sapiente velit reprehenderit minus eos! Consequuntur, neque ex! Modi est nulla nobis sint!
-                    Rerum necessitatibus laudantium sed quasi quo voluptas nisi consectetur aspernatur libero cupiditate. Quaerat nostrum magnam vitae quam mollitia! Vitae molestiae nostrum sit nesciunt impedit nemo necessitatibus obcaecati modi itaque sequi.</p>
+                    <p>Optimal Page Replacement (OPT) is a theoretical algorithm that always replaces the page that will not be used for the longest time in the future. By making perfect choices based on future knowledge, OPT guarantees the fewest possible page faults for any reference string and memory size. While OPT serves as an important benchmark for evaluating other algorithms, it cannot be implemented in practice because no system can predict future memory accesses. Therefore, OPT is mainly used in simulations and theoretical analyses to measure how close real algorithms come to the ideal performance.</p>
                 </section>
                 <section class="algorithm">
-                    <h2>Optimal Algorithm</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ullam quis ab ducimus non labore earum nam aut eius, eveniet autem placeat, reiciendis voluptatem obcaecati nulla recusandae consectetur animi aspernatur!
-                    Molestias illo architecto consequuntur? Corporis dicta veritatis nam sunt hic! Quas exercitationem eum laboriosam tenetur accusamus laborum voluptatum, possimus, excepturi qui ipsam delectus. Magnam dignissimos molestias consectetur sunt aperiam temporibus!
-                    Iste sed voluptate ullam, at sequi explicabo molestiae tempore laudantium ipsam sunt delectus rerum natus cum eum quisquam asperiores illum officia exercitationem amet nesciunt optio. Laborum explicabo sit officia praesentium?
-                    Aliquid unde iusto vitae numquam commodi corporis vel eum, magnam aliquam odio animi ullam a odit officia laborum! Tempora assumenda aut reiciendis obcaecati, odit praesentium enim velit sapiente itaque delectus?
-                    Deleniti, neque earum! Dolores ipsum hic atque ad. Magni rem maiores facere est repellat illo, sequi aspernatur voluptatem fugiat veritatis veniam, praesentium aut? Expedita minima necessitatibus illo placeat tempore dolor.
-                    Quibusdam sunt eligendi voluptatum labore pariatur nisi laudantium. Laborum nesciunt rerum odit consectetur dicta, iusto voluptatem similique dolor, eius facilis fugit nemo fuga aliquam voluptatibus dolorem, tempora ratione et cum!
-                    Voluptatum quam quia perspiciatis laboriosam provident accusamus laudantium dolorem ipsa nam similique? Tenetur inventore aliquam perspiciatis facilis. Iste ex pariatur aliquid possimus, incidunt repudiandae inventore. Dolore perferendis minus tenetur fuga.
-                    Natus obcaecati exercitationem tempore architecto molestias nam recusandae ea alias repellendus in ipsum, odit magni quaerat accusantium minus beatae saepe aliquam impedit magnam quam voluptatibus eum dolor possimus laudantium. Itaque!
-                    Dolorem, sunt, aliquam atque quae magni aut quasi, hic voluptate aliquid dolor aperiam incidunt recusandae distinctio libero sapiente velit reprehenderit minus eos! Consequuntur, neque ex! Modi est nulla nobis sint!
-                    Rerum necessitatibus laudantium sed quasi quo voluptas nisi consectetur aspernatur libero cupiditate. Quaerat nostrum magnam vitae quam mollitia! Vitae molestiae nostrum sit nesciunt impedit nemo necessitatibus obcaecati modi itaque sequi.</p>
+                    <h2>Optimal (OPT) Algorithm</h2>
+                    <p>Least Recently Used (LRU) is a practical algorithm that approximates the optimal strategy without requiring future knowledge. It replaces the page that has not been accessed for the longest time, based on the assumption that pages recently used are more likely to be used again soon. LRU performs very well in real-world applications that exhibit temporal locality—where programs tend to access the same pages repeatedly. Although LRU provides excellent results and avoids Belady’s anomaly, it requires additional mechanisms (like counters, stacks, or reference bits) to track page usage, which can introduce overhead depending on the system’s hardware support.</p>
                 </section>
             </main>
             <footer>
-                <p>Computer Science
-                    
-                </p>
+                <p>Computer Science final project in Operating System by Angelo Miranda</p>
+                <a href="https://github.com/shoichiideologies" target="_blank" rel="noopener">shoichiideologies/Github</a>
             </footer>
+            <script src="./information.js"></script>
         </div>
     </body>
 </html>

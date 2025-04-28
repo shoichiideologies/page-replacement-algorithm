@@ -2,8 +2,10 @@ html,
 body {
 	padding: 0;
 	margin: 0;
-	background: rgb(241, 239, 236);
+	background: #FDFAF6;
 }
+
+
 
 /* Use OS default fonts */
 body,
@@ -28,7 +30,7 @@ nav {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color:  rgb(209, 155, 102);
+	background-color:  rgba(153, 188, 133, 0.7);
 	padding: 10px;
 }
 
@@ -40,20 +42,26 @@ nav section{
 	border-radius: 30px;
 	background-color: rgb(230, 227, 224);
 	height: 50px;
-	width: 400px;
+	width: 30%;
 	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 nav p {
-	font-family: inherit;
+	font-family: monospace;
 	display: block;
-	padding: 10px 20px;
-	text-decoration: none;
+	padding: 17px;
 	color: #333;
 	text-align: center;
-	max-width: 50%;
+	width: 50%;
 	font-size: 16px;
 	font-weight: 400;
+	cursor: pointer;
+	border-radius: 30px;
+}
+
+nav p:hover{
+	background-color: rgb(145, 177, 127);
+	transition: background-color 0.3s ease;
 }
 
 /* HEADER */
@@ -63,13 +71,32 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 80px;
+	padding: 20px;
+}
+
+header section{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 75%;
+	padding: 70px 0;
 }
 
 header h1 {
-    font-size: 2.5em;
+	font-size: 40px;
+	font-weight: 400;
+	font-family: monospace;
     margin: 0;
+	opacity: 0.7;
+	letter-spacing: 1px;
+}
 
+header p{
+	/* Ensure fallback to a web-safe font */
+	font-family: monospace;
+	font-size: 16px;
+	line-height: 1.7;
 }
 
 /* MAIN */
@@ -84,23 +111,59 @@ main {
 
 .algorithm{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     padding: 20px;
     width: 75%;
-    text-align: justify;
     font-size: 20px;
+	border: 1px solid #c6c6c6;
+	margin: 10px 0;
 }
 
 .algorithm h2{
     margin: 0;
-    padding: 50px 0 15px 0;
+	padding: 7px 0;
+	font-family: monospace;
+	opacity: 0.9;
+	font-size: 20px;
+	font-weight: 400;
+	background-color:  rgba(153, 188, 133, 0.7);
 }
 
 .algorithm p{
     margin: 0;
     padding: 0;
     line-height: 1.7;
+	font-size: 16px;
+	margin: 10px 0;
+	font-family: monospace;
+}
+
+/* FOOTER */
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 50px 20px 20px 20px;
+}
+
+footer p {
+	font-family: inherit;
+	text-decoration: none;
+	color: #333;
+	text-align: center;
+	max-width: 50%;
+	font-size: 16px;
+	font-weight: 400;
+	font-family: monospace;
+}
+
+footer a {
+	text-decoration: none;
+	color: #236179;
+	font-weight: 600;
+	font-family: monospace;
+
 }
 
