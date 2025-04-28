@@ -30,6 +30,8 @@
 	"devDependencies": {
 		"electron": "^13.0.0",
 		"electron-builder": "^23.6.0",
+		"eslint": "^9.25.1",
+		"eslint-plugin-unicorn": "^59.0.0",
 		"np": "^7.6.2",
 		"xo": "^0.51.0"
 	},
@@ -49,16 +51,16 @@
 	"build": {
 		"appId": "com.angelomiranda.page-replacement-algorithm-visualizer",
 		"productName": "Page Replacement Algorithm Visualizer",
-  		"directories": {
-    	"output": "dist"
-  		},
-  		"files": [
-    		"**/*"
-  		],
-  		"win": {
-    		"target": [
-      		"nsis"
-    		]
+		"directories": {
+			"output": "dist"
+		},
+		"files": [
+			"**/*"
+		],
+		"win": {
+			"target": [
+				"nsis"
+			]
 		},
 		"mac": {
 			"category": "public.app-category.social-networking",
