@@ -157,7 +157,7 @@ header button{
 	display: block;
 	padding: 10px 20px;
 	text-decoration: none;
-	color: #333;
+	color: #000000;
 	text-align: center;
 	width: 30%;
 	height: 60px;
@@ -173,7 +173,7 @@ header button{
 
 header button:hover{
 	transition: all 0.3s ease;
-	color: rgb(0, 0, 0);
+	color: rgb(26, 26, 26);
 	opacity: 0.7;
 }
 
@@ -364,7 +364,7 @@ main section .simulation .page-container .page .page-results {
 
 .analysis table {
 	width: 50%;
-	height: 80%;
+	height: 50%;
 	border-radius: 10px;
 	background-color: rgb(250, 241, 230);
 	border-collapse: collapse;
@@ -386,7 +386,7 @@ main section .simulation .page-container .page .page-results {
 
 .analysis #text{
 	font-weight: 300;
-	font-size: 16px;
+	font-size: 4;
 	height: 10%;
 	padding: 20px 0;
 }
