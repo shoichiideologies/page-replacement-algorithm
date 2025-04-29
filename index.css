@@ -59,7 +59,7 @@ nav p {
 }
 
 nav p:hover {
-	background-color: rgb(145, 177, 127);
+	background-color: #91b17f;
 	transition: background-color 0.3s ease;
 }
 
