@@ -14,7 +14,7 @@ debug();
 contextMenu();
 
 // Note: Must match `build.appId` in package.json
-app.setAppUserModelId('com.company.AppName');
+app.setAppUserModelId('com.angelomiranda.page-replacement-algorithm-visualizer');
 
 // Uncomment this before publishing your first version.
 // It's commented out as it throws an error if there are no published versions.
@@ -23,7 +23,7 @@ app.setAppUserModelId('com.company.AppName');
 // 	setInterval(() => {
 // 		autoUpdater.checkForUpdates();
 // 	}, FOUR_HOURS);
-//
+
 // 	autoUpdater.checkForUpdates();
 // }
 
@@ -88,26 +88,3 @@ app.on('activate', async () => {
 	const favoriteAnimal = config.get('favoriteAnimal');
 	mainWindow.webContents.executeJavaScript(`document.querySelector('header p').textContent = 'Your favorite animal is ${favoriteAnimal}'`);
 })();
-
-/* STARTS HERE */
-
-function generateReferenceString(length = 20, pageRange = 10) {
-	const reference = [];
-	for (let i = 0; i < length; i++) {
-	  const page = Math.floor(Math.random() * pageRange);
-	  reference.push(page);
-	}
-	return reference;
-  }
-  
-  function displayReferenceString() {
-	const referenceArray = generateReferenceString();
-	const referenceString = referenceArray.join(',');
-	const inputElement = document.getElementById('reference-page-string');
-	
-	if (inputElement) {
-	  inputElement.value = referenceString;
-	}
-  }
-  
-  document.getElementById('random-image').addEventListener('click', displayReferenceString);

@@ -3,6 +3,7 @@
 	"productName": "Page-Replacement Algorithm Visualizer",
 	"version": "0.0.3",
 	"description": "The best app ever",
+	"main": "index.js",
 	"license": "MIT",
 	"repository": "sindresorhus/electron-boilerplate",
 	"author": {
@@ -20,7 +21,7 @@
 		"release": "np --no-test --yolo"
 	},
 	"dependencies": {
-		"electron-context-menu": "^3.4.0",
+		"electron-context-menu": "^3.6.1",
 		"electron-debug": "^3.2.0",
 		"electron-store": "^8.1.0",
 		"electron-unhandled": "^4.0.1",
@@ -28,7 +29,7 @@
 		"electron-util": "^0.17.2"
 	},
 	"devDependencies": {
-		"electron": "^13.0.0",
+		"electron": "^36.0.0",
 		"electron-builder": "^23.6.0",
 		"eslint": "^9.25.1",
 		"eslint-plugin-unicorn": "^59.0.0",
@@ -51,12 +52,24 @@
 	"build": {
 		"appId": "com.angelomiranda.page-replacement-algorithm-visualizer",
 		"productName": "Page Replacement Algorithm Visualizer",
-		"icon": "icons/icon.png",  
+		"icon": "icons/icon.png",
 		"directories": {
 			"output": "dist"
 		},
 		"files": [
-			"**/*"
+			"index.js",
+			"index.html",
+			"index.css",
+			"information.html",
+			"information.css",
+			"information.js",
+			"config.js",
+			"menu.js",
+			"renderer.js",
+			"icons/**",
+			"logo/**",
+			"static/**",
+			"package.json"
 		],
 		"win": {
 			"target": [
