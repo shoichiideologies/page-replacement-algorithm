@@ -51,6 +51,7 @@
 	"build": {
 		"appId": "com.angelomiranda.page-replacement-algorithm-visualizer",
 		"productName": "Page Replacement Algorithm Visualizer",
+		"icon": "icons/icon.png",  
 		"directories": {
 			"output": "dist"
 		},
