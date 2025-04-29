@@ -1,7 +1,7 @@
 {
 	"name": "page-replacement-algorithm-visualizer",
 	"productName": "Page-Replacement Algorithm Visualizer",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "The best app ever",
 	"main": "index.js",
 	"license": "MIT",
