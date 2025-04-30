@@ -43,6 +43,10 @@
 			"browser"
 		],
 		"rules": {
+			"unicorn/prefer-module": "off",
+			"unicorn/prefer-number-properties": "off",
+			"unicorn/prevent-abbreviations": "off",
+			"unicorn/prefer-top-level-await": "off",
 			"unicorn/prefer-query-selector": "off",
 			"unicorn/no-array-for-each": "off",
 			"indent": [
