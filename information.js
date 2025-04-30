@@ -1,11 +1,13 @@
 const navParagraphs = document.querySelectorAll('nav p');
 
-navParagraphs.forEach(p => {
-    p.addEventListener('click', () => {
-        // Remove 'active' class from all nav p elements
-        navParagraphs.forEach(item => item.classList.remove('active'));
+for (const p of navParagraphs) {
+	p.addEventListener('click', () => {
+		// Remove 'active' class from all nav p elements
+		for (const item of navParagraphs) {
+			item.classList.remove('active');
+		}
 
-        // Add 'active' class to the clicked p
-        p.classList.add('active');
-    });
-});
+		// Add 'active' class to the clicked p
+		p.classList.add('active');
+	});
+}

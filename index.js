@@ -1,5 +1,5 @@
 'use strict';
-const path = require('path');
+const path = require('node:path');
 const {app, BrowserWindow, Menu} = require('electron');
 /// const {autoUpdater} = require('electron-updater');
 const {is} = require('electron-util');
@@ -32,10 +32,11 @@ let mainWindow;
 
 const createMainWindow = async () => {
 	const window_ = new BrowserWindow({
-		title: app.name,
+		title: 'Page-Replacement Algorithm Visualizer',
 		show: false,
-		width: 600,
-		height: 400,
+		resizable: false,
+		width: 1500,
+		height: 900,
 	});
 
 	window_.on('ready-to-show', () => {
@@ -75,9 +76,7 @@ app.on('window-all-closed', () => {
 });
 
 app.on('activate', async () => {
-	if (!mainWindow) {
-		mainWindow = await createMainWindow();
-	}
+	mainWindow ||= await createMainWindow();
 });
 
 (async () => {
@@ -88,3 +87,4 @@ app.on('activate', async () => {
 	const favoriteAnimal = config.get('favoriteAnimal');
 	mainWindow.webContents.executeJavaScript(`document.querySelector('header p').textContent = 'Your favorite animal is ${favoriteAnimal}'`);
 })();
+

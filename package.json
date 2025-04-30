@@ -25,7 +25,7 @@
 		"electron-debug": "^3.2.0",
 		"electron-store": "^8.1.0",
 		"electron-unhandled": "^4.0.1",
-		"electron-updater": "^5.2.1",
+		"electron-updater": "^6.6.2",
 		"electron-util": "^0.17.2"
 	},
 	"devDependencies": {
@@ -42,7 +42,9 @@
 			"browser"
 		],
 		"rules": {
-			"unicorn/prefer-module": "off"
+			"unicorn/prefer-query-selector": "off",
+    		"unicorn/no-array-for-each": "off",
+    		"indent": ["error", "tab"]
 		}
 	},
 	"np": {

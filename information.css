@@ -128,12 +128,16 @@ main {
 	background-color:  rgba(153, 188, 133, 0.7);
 }
 
-.algorithm p{
-    margin: 0;
-    padding: 0;
+main .algorithm .complexity{
+	font-family: monospace;	
+	font-size: 14px;
+	font-weight: 300;
+	opacity: 0.9;
+}
+
+.algorithm .definition{
     line-height: 1.7;
 	font-size: 16px;
-	margin: 10px 0;
 	font-family: monospace;
 }
 
