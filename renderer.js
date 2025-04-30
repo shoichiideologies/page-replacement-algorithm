@@ -104,23 +104,23 @@ function simulateAlgorithms(referenceString, frameCount) {
 			let pageFault = false;
 
 			switch (algoId) {
-				case 'fifo': {
-					pageFault = simulateFIFO(frames, frameCount, pageNumber);
+			case 'fifo': {
+				pageFault = simulateFIFO(frames, frameCount, pageNumber);
 
-					break;
-				}
+				break;
+			}
 
-				case 'lru': {
-					pageFault = simulateLRU(frames, frameCount, pageNumber, referenceString.slice(0, index));
+			case 'lru': {
+				pageFault = simulateLRU(frames, frameCount, pageNumber, referenceString.slice(0, index));
 
-					break;
-				}
+				break;
+			}
 
-				case 'optimal': {
-					pageFault = simulateOptimal(frames, frameCount, pageNumber, referenceString.slice(index + 1));
+			case 'optimal': {
+				pageFault = simulateOptimal(frames, frameCount, pageNumber, referenceString.slice(index + 1));
 
-					break;
-				}
+				break;
+			}
 			// No default
 			}
 
@@ -142,26 +142,26 @@ function simulateAlgorithms(referenceString, frameCount) {
 
 		// 👇 After loop, update page fault result
 		switch (algoId) {
-			case 'fifo': {
-				document.querySelector('#fifo-page-faults-result').textContent = fifoPageFaults;
-				document.querySelector('#fifo-page-fault').textContent = fifoPageFaults;
+		case 'fifo': {
+			document.querySelector('#fifo-page-faults-result').textContent = fifoPageFaults;
+			document.querySelector('#fifo-page-fault').textContent = fifoPageFaults;
 
-				break;
-			}
+			break;
+		}
 
-			case 'lru': {
-				document.querySelector('#lru-page-faults-result').textContent = lruPageFaults;
-				document.querySelector('#lru-page-fault').textContent = lruPageFaults;
+		case 'lru': {
+			document.querySelector('#lru-page-faults-result').textContent = lruPageFaults;
+			document.querySelector('#lru-page-fault').textContent = lruPageFaults;
 
-				break;
-			}
+			break;
+		}
 
-			case 'optimal': {
-				document.querySelector('#optimal-page-faults-result').textContent = optimalPageFaults;
-				document.querySelector('#optimal-page-fault').textContent = optimalPageFaults;
+		case 'optimal': {
+			document.querySelector('#optimal-page-faults-result').textContent = optimalPageFaults;
+			document.querySelector('#optimal-page-fault').textContent = optimalPageFaults;
 
-				break;
-			}
+			break;
+		}
 		// No default
 		}
 	}
