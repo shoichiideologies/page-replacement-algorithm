@@ -36,6 +36,8 @@ _macOS 10.13+, Linux, and Windows 7+ are supported (64-bit only)._
 
 Courtesy of [Electron](https://electronjs.org).
 
+---
+
 ## License
 
 This project is licensed under the GPL-3.0 license.
