@@ -1,20 +1,30 @@
-Page-Replacement Algorithm Visualizer
+# Step Algo
 
-> The best app ever
+A **Page-Replacement Algorithm Visualizer** aims to provide an interactive and educational tool for understanding how different page-replacement algorithms work. It helps users visualize the process of memory management in operating systems by simulating various algorithms such as First-In-First-Out (FIFO), Last Recently Used (LRU), and Optimal (OPT).
 
-## How to install
+---
 
-*macOS 10.13+, Linux, and Windows 7+ are supported (64-bit only).*
+## User Interface
+
+#### Computation Tab
+
+![Computation Tab](images/1 OS-case_study-page_replacement_algorithm-ss.png)
+
+#### Information Tab
+
+![Information Tab](images/2 OS-case_study-page_replacement_algorithm-ss.png)
+
+---
+
+## How to Install?
+
+Refer to the **Releases** section located under the **Code** tab, just below the **About** section. Download the file compatible with your system.
+
+_macOS 10.13+, Linux, and Windows 7+ are supported (64-bit only)._
 
 **macOS**
 
 [**Download**](https://github.com/user/repo/releases/latest) the `.dmg` file.
-
-**Linux**
-
-[**Download**](https://github.com/user/repo/releases/latest) the `.AppImage` or `.deb` file.
-
-*The AppImage needs to be [made executable](http://discourse.appimage.org/t/how-to-make-an-appimage-executable/80) after download.*
 
 **Windows**
 
@@ -22,17 +32,6 @@ Page-Replacement Algorithm Visualizer
 
 ---
 
-### How to Run the App?
+## Dev
 
-```sh
-npm install
-npm start
-```
-
-### Publish
-
-```sh
-npm run release
-```
-
-After Travis finishes building your app, open the release draft it created and click "Publish".
+Courtest with [Electron](https://electronjs.org).
