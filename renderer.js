@@ -104,24 +104,21 @@ function simulateAlgorithms(referenceString, frameCount) {
 			let pageFault = false;
 
 			switch (algoId) {
-			case 'fifo': {
-				pageFault = simulateFIFO(frames, frameCount, pageNumber);
+				case 'fifo': {
+					pageFault = simulateFIFO(frames, frameCount, pageNumber);
+					break;
+				}
 
-				break;
-			}
+				case 'lru': {
+					pageFault = simulateLRU(frames, frameCount, pageNumber, referenceString.slice(0, index));
+					break;
+				}
 
-			case 'lru': {
-				pageFault = simulateLRU(frames, frameCount, pageNumber, referenceString.slice(0, index));
-
-				break;
-			}
-
-			case 'optimal': {
-				pageFault = simulateOptimal(frames, frameCount, pageNumber, referenceString.slice(index + 1));
-
-				break;
-			}
-			// No default
+				case 'optimal': {
+					pageFault = simulateOptimal(frames, frameCount, pageNumber, referenceString.slice(index + 1));
+					break;
+				}
+				// No default
 			}
 
 			const pageDiv = pageDivs[index];
@@ -134,10 +131,10 @@ function simulateAlgorithms(referenceString, frameCount) {
 					pageResult.style.width = '100%';
 					pageResult.style.height = '30px';
 					pageResult.style.borderRadius = 'inherit';
+					pageResult.style.backgroundColor = framePage === pageNumber ? 'rgba(153, 188, 133, 0.7)' : 'rgba(153, 188, 133, 0.3)';
 					pageDiv.append(pageResult);
 				}
 			}
-			// Otherwise, leave blank for page hits
 		}
 
 		// 👇 After loop, update page fault result
