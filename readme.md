@@ -8,11 +8,11 @@ A **Page-Replacement Algorithm Visualizer** aims to provide an interactive and e
 
 #### Computation Tab
 
-![Computation Tab](images/1 OS-case_study-page_replacement_algorithm-ss.png)
+![Computation Tab](https://github.com/shoichiideologies/page-replacement-algorithm/blob/994dec16349186148223edaa59186418ca3b6390/images/1%20OS-case_study-page_replacement_algorithm-ss.png)
 
 #### Information Tab
 
-![Information Tab](images/2 OS-case_study-page_replacement_algorithm-ss.png)
+![Information Tab](https://github.com/shoichiideologies/page-replacement-algorithm/blob/994dec16349186148223edaa59186418ca3b6390/images/2%20OS-case_study-page_replacement_algorithm-ss.png)
 
 ---
 
@@ -32,6 +32,12 @@ _macOS 10.13+, Linux, and Windows 7+ are supported (64-bit only)._
 
 ---
 
-## Dev
+## Courtesy
 
-Courtest with [Electron](https://electronjs.org).
+Courtesy of [Electron](https://electronjs.org).
+
+## License
+
+This project is licensed under the GPL-3.0 license.
+
+
