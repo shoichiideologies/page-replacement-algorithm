@@ -32,9 +32,9 @@ _macOS 10.13+, Linux, and Windows 7+ are supported (64-bit only)._
 
 ---
 
-## Courtesy
+## Credits
 
-Courtesy of [Electron](https://electronjs.org).
+Credits to [Electron](https://electronjs.org).
 
 ---
 
