@@ -24,11 +24,11 @@ _macOS 10.13+, Linux, and Windows 7+ are supported (64-bit only)._
 
 **macOS**
 
-[**Download**](https://github.com/user/repo/releases/latest) the `.dmg` file.
+[**Download**](https://github.com/shoichiideologies/page-replacement-algorithm/releases/latest) the `.dmg` file.
 
 **Windows**
 
-[**Download**](https://github.com/user/repo/releases/latest) the `.exe` file.
+[**Download**](https://github.com/shoichiideologies/page-replacement-algorithm/releases/latest) the `.exe` file.
 
 ---
 
