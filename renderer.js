@@ -192,7 +192,7 @@ function determineBestAlgorithm() {
 		// All tied — compare by complexity
 		outputElement.textContent
       = `All algorithms have ${minFaults} page faults. Based on time and space complexity, `
-      + 'LRU is preferred due to its practical balance between performance and implementability.';
+      + 'LRU is preferred because it performs well in practice and does not require future knowledge like Optimal.';
 	} else {
 		// Tie between 2 algorithms
 		const list = bestAlgorithms.join(' and ');
