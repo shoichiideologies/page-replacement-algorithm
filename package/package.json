@@ -1,0 +1,122 @@
+{
+	"name": "page-replacement-algorithm-visualizer",
+	"productName": "Page-Replacement Algorithm Visualizer",
+	"version": "0.0.5",
+	"description": "The best app ever",
+	"main": "index.js",
+	"license": "MIT",
+	"repository": "sindresorhus/electron-boilerplate",
+	"author": {
+		"name": "Angelo Miranda",
+		"email": "angelo.miranda28@outlook.com",
+		"url": "https://angelomiranda.com"
+	},
+	"scripts": {
+		"postinstall": "electron-builder install-app-deps",
+		"lint": "xo",
+		"test": "npm run lint",
+		"start": "electron .",
+		"pack": "electron-builder --dir",
+		"dist": "electron-builder --macos --linux --windows",
+		"release": "np --no-test --yolo"
+	},
+	"dependencies": {
+		"18": "^0.0.0",
+		"electron-context-menu": "^3.6.1",
+		"electron-debug": "^3.2.0",
+		"electron-store": "^8.1.0",
+		"electron-unhandled": "^4.0.1",
+		"electron-updater": "^6.6.2",
+		"electron-util": "^0.17.2"
+	},
+	"devDependencies": {
+		"electron": "^36.0.0",
+		"electron-builder": "^23.6.0",
+		"eslint": "^9.25.1",
+		"eslint-plugin-unicorn": "^59.0.0",
+		"np": "^7.6.2",
+		"xo": "^0.60.0"
+	},
+	"xo": {
+		"envs": [
+			"node",
+			"browser"
+		],
+		"rules": {
+			"unicorn/prefer-module": "off",
+			"unicorn/prefer-number-properties": "off",
+			"unicorn/prevent-abbreviations": "off",
+			"unicorn/prefer-top-level-await": "off",
+			"unicorn/prefer-query-selector": "off",
+			"unicorn/no-array-for-each": "off",
+			"indent": [
+				"error",
+				"tab"
+			]
+		}
+	},
+	"np": {
+		"publish": false,
+		"releaseDraft": false
+	},
+	"build": {
+		"appId": "com.angelomiranda.page-replacement-algorithm-visualizer",
+		"productName": "Page Replacement Algorithm Visualizer",
+		"icon": "icons/icon.png",
+		"directories": {
+			"output": "dist"
+		},
+		"files": [
+			"index.js",
+			"index.html",
+			"index.css",
+			"information.html",
+			"information.css",
+			"information.js",
+			"config.js",
+			"menu.js",
+			"renderer.js",
+			"icons/**",
+			"logo/**",
+			"static/**",
+			"package.json"
+		],
+		"win": {
+			"target": [
+				"nsis"
+			]
+		},
+		"mac": {
+			"category": "public.app-category.social-networking",
+			"darkModeSupport": true,
+			"target": "dmg",
+			"arch": ["arm64", "x64"],  
+			"hardenedRuntime": true,
+			"gatekeeperAssess": false,
+			"entitlements": "entitlements.mac.plist",
+			"entitlementsInherit": "entitlements.mac.plist"
+		},
+		"dmg": {
+			"iconSize": 160,
+			"contents": [
+				{
+					"x": 180,
+					"y": 170
+				},
+				{
+					"x": 480,
+					"y": 170,
+					"type": "link",
+					"path": "/Applications"
+				}
+			]
+		},
+		"linux": {
+			"target": [
+				"AppImage",
+				"deb"
+			],
+			"category": "Network;Chat"
+		}
+	}
+}

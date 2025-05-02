@@ -18,7 +18,8 @@
 		"start": "electron .",
 		"pack": "electron-builder --dir",
 		"dist": "electron-builder --macos --linux --windows",
-		"release": "np --no-test --yolo"
+		"release": "np --no-test --yolo",
+		"dist:mac": "electron-builder --mac --universal"
 	},
 	"dependencies": {
 		"18": "^0.0.0",
@@ -90,7 +91,6 @@
 			"category": "public.app-category.social-networking",
 			"darkModeSupport": true,
 			"target": "dmg",
-			"arch": ["arm64", "x64"],  
 			"hardenedRuntime": true,
 			"gatekeeperAssess": false,
 			"entitlements": "entitlements.mac.plist",

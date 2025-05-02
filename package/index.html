@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+		<head>
+		<meta charset="utf-8">
+		<title>Electron boilerplate</title>
+		<link rel="stylesheet" href="index.css">
+		<title>Page-Replacement Algotithm Visualizer</title>
+	</head>
+	<body>
+		<div class="container">
+			<nav>
+				<section>
+					<p onclick="location.href='index.html'">Computation</p>
+					<p onclick="location.href='information.html'">Information</p>
+				</section>
+			</nav>
+			<header>
+				<h1>Page Replacement Algorithm Visualizer</h1>
+				<section>
+					<label for="page-frames">Enter Page Frames:</label>
+					<input type="number" id="page-frames" value="3" min="1" max="19">
+					<label for="reference-page-string">Random Reference Page String:</label>
+					<input type="text" id="reference-page-string" maxlength="100">
+					<img src="./logo/random.png" alt="Random" id="random-image">
+				</section>
+				<button id="submit-button" title="Submit">Calculate</button>
+				<p id="error-message">Error Message</p>
+			</header>
+			<main>
+				<section class="algorithm">
+					<h2>First-In-First-Out (FIFO) Algorithm</h2>
+					<div class="simulation" id="fifo">
+						<div class="string-container">
+							<div class="string"></div>
+						</div>
+						<div class="page-container">
+							<div class="page">
+								<div class="page-results"></div>
+							</div>
+						</div>
+					</div>
+					<p>
+						<span>
+							<span id="page-faults">Page Faults: </span> 
+							<span class="page-faults-result" id="fifo-page-faults-result">0</span>
+						</span>
+					</p>				
+				</section>
+				<section class="algorithm">
+					<h2>Least Recently Used (LRU) Algorithm</h2>
+					<div class="simulation" id="lru">
+						<div class="string-container">
+							<div class="string"></div>
+						</div>
+						<div class="page-container">
+							<div class="page">
+								<div class="page-results"></div>
+							</div>
+						</div>
+					</div>
+					<p>
+						<span>
+							<span id="page-faults">Page Faults: </span> 
+							<span class="page-faults-result"id="lru-page-faults-result">0</span>
+						</span>
+					</p>				
+				</section>
+				<section class="algorithm" >
+					<h2>Optimal (OPT) Algorithm</h2>
+					<div class="simulation" id="optimal">
+						<div class="string-container">
+							<div class="string"></div>
+						</div>
+						<div class="page-container">
+							<div class="page">
+								<div class="page-results"></div>
+							</div>
+						</div>
+					</div>
+					<p>
+						<span>
+							<span id="page-faults">Page Faults: </span> 
+							<span class="page-faults-result" id="optimal-page-faults-result">0</span>
+						</span>
+					</p>
+				</section>
+				<section class="analysis">
+					<h2>Analysis</h2>
+					<table>
+						<tr>
+							<th>Algorithm</th>
+							<th>Page Fault</th>
+						</tr>
+						<tr>
+							<td>First-In-First-Out (FIFO)</td>
+							<td id="fifo-page-fault"></td>
+						</tr>
+						<tr>
+							<td>Least Recently Used (LRU)</td>
+							<td id="lru-page-fault"></td>
+						</tr>
+						<tr>
+							<td>Optimal (OPT)</td>
+							<td id="optimal-page-fault"></td>
+						</tr>
+					</table>
+					<p id="text">
+						The most efficient algorithm for accommodating 
+						<b id="display-page-frame">-</b> page frames with a reference page string of length 20 is: 
+						<b id="efficient-algo"></b>
+					</p>
+				</section>
+			</main>
+		</div>
+	</body>
+	<script src="renderer.js"></script>
+</html>
