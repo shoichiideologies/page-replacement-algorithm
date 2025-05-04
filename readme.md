@@ -12,7 +12,7 @@ A **Page-Replacement Algorithm Visualizer** that serves as an interactive and ed
 
 #### Information Tab
 
-![Information Tab](https://github.com/shoichiideologies/page-replacement-algorithm/blob/a167fe8ecf6882f4650fc205090added874ee6b1/images/1%20OS-case_study-page_replacement_algorithm-ss.png)
+![Information Tab](https://github.com/shoichiideologies/page-replacement-algorithm/blob/f868007b8262fa41766ac6a79848a2ce895f1724/images/1%20OS-case_study-page_replacement_algorithm-ss.png)
 
 ---
 
@@ -20,17 +20,17 @@ A **Page-Replacement Algorithm Visualizer** that serves as an interactive and ed
 
 #### Virtual Memory
 
-![Virtual Memory](https://github.com/shoichiideologies/page-replacement-algorithm/blob/494c32d3a744683b3839d25305fdc4d1869ddf99/documentation/Case_Study-Chapter_10-Virtual_Memory.pdf)
+[**Virtual Memory**](https://github.com/shoichiideologies/page-replacement-algorithm/blob/494c32d3a744683b3839d25305fdc4d1869ddf99/documentation/Case_Study-Chapter_10-Virtual_Memory.pdf)
 
 #### Page-Replacement Algorithms
 
-![Page-Replacement Algorithms](https://github.com/shoichiideologies/page-replacement-algorithm/blob/494c32d3a744683b3839d25305fdc4d1869ddf99/documentation/Case_Study-Chapter_10-Virtual_Memory-Page_Replacement.pdf)
+[**Page-Replacement Algorithms**](https://github.com/shoichiideologies/page-replacement-algorithm/blob/494c32d3a744683b3839d25305fdc4d1869ddf99/documentation/Case_Study-Chapter_10-Virtual_Memory-Page_Replacement.pdf)
 
 ---
 
 ## Documentation
 
-![Documenation](https://github.com/shoichiideologies/page-replacement-algorithm/blob/494c32d3a744683b3839d25305fdc4d1869ddf99/documentation/Miranda-Case_Study-OS-Documentation.pdf)
+[**Documentation**](https://github.com/shoichiideologies/page-replacement-algorithm/blob/494c32d3a744683b3839d25305fdc4d1869ddf99/documentation/Miranda-Case_Study-OS-Documentation.pdf)
 
 ---
 
