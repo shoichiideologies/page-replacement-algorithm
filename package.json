@@ -1,11 +1,11 @@
 {
 	"name": "page-replacement-algorithm-visualizer",
-	"productName": "Page-Replacement Algorithm Visualizer",
+	"productName": "StepAlgo",
 	"version": "0.0.5",
 	"description": "The best app ever",
 	"main": "index.js",
 	"license": "MIT",
-	"repository": "sindresorhus/electron-boilerplate",
+	"repository": "https://github.com/shoichiideologies/page-replacement-algorithm",
 	"author": {
 		"name": "Angelo Miranda",
 		"email": "angelo.miranda28@outlook.com",
@@ -19,7 +19,8 @@
 		"pack": "electron-builder --dir",
 		"dist": "electron-builder --macos --linux --windows",
 		"release": "np --no-test --yolo",
-		"dist:mac": "electron-builder --mac --universal"
+		"dist:mac": "electron-builder --mac --universal",
+		"publish": "electron-builder --publish always"
 	},
 	"dependencies": {
 		"18": "^0.0.0",
@@ -61,11 +62,12 @@
 		"releaseDraft": false
 	},
 	"build": {
-		"appId": "com.angelomiranda.page-replacement-algorithm-visualizer",
-		"productName": "Page Replacement Algorithm Visualizer",
-		"icon": "icons/icon.png",
-		"directories": {
-			"output": "dist"
+	"appId": "com.angelomiranda.page-replacement-algorithm-visualizer",
+	"productName": "StepAlgo",
+	"icon": "icons/icon.png",
+	"directories": {
+		"output": "dist",
+		"buildResources": "static"
 		},
 		"files": [
 			"index.js",
@@ -80,12 +82,23 @@
 			"icons/**",
 			"logo/**",
 			"static/**",
-			"package.json"
+			"package.json",
+			"node_modules/**/*"
 		],
+		"publish": {
+			"provider": "github",
+			"owner": "shoichiideologies",
+			"repo": "page-replacement-algorithm"
+		},
 		"win": {
 			"target": [
-				"nsis"
-			]
+				{
+					"target": "nsis",
+					"arch": ["x64"]
+				}
+			],
+			"executableName": "StepAlgo", 
+			"artifactName": "${productName}-Setup-${version}.${ext}"
 		},
 		"mac": {
 			"category": "public.app-category.social-networking",

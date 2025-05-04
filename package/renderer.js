@@ -104,20 +104,20 @@ function simulateAlgorithms(referenceString, frameCount) {
 			let pageFault = false;
 
 			switch (algoId) {
-				case 'fifo': {
-					pageFault = simulateFIFO(frames, frameCount, pageNumber);
-					break;
-				}
+			case 'fifo': {
+				pageFault = simulateFIFO(frames, frameCount, pageNumber);
+				break;
+			}
 
-				case 'lru': {
-					pageFault = simulateLRU(frames, frameCount, pageNumber, referenceString.slice(0, index));
-					break;
-				}
+			case 'lru': {
+				pageFault = simulateLRU(frames, frameCount, pageNumber, referenceString.slice(0, index));
+				break;
+			}
 
-				case 'optimal': {
-					pageFault = simulateOptimal(frames, frameCount, pageNumber, referenceString.slice(index + 1));
-					break;
-				}
+			case 'optimal': {
+				pageFault = simulateOptimal(frames, frameCount, pageNumber, referenceString.slice(index + 1));
+				break;
+			}
 				// No default
 			}
 
