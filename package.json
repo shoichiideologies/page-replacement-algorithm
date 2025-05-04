@@ -1,7 +1,7 @@
 {
 	"name": "page-replacement-algorithm-visualizer",
 	"productName": "StepAlgo",
-	"version": "0.0.5",
+	"version": "1.0.0",
 	"description": "The best app ever",
 	"main": "index.js",
 	"license": "MIT",
@@ -62,12 +62,12 @@
 		"releaseDraft": false
 	},
 	"build": {
-	"appId": "com.angelomiranda.page-replacement-algorithm-visualizer",
-	"productName": "StepAlgo",
-	"icon": "icons/icon.png",
-	"directories": {
-		"output": "dist",
-		"buildResources": "static"
+		"appId": "com.angelomiranda.page-replacement-algorithm-visualizer",
+		"productName": "StepAlgo",
+		"icon": "icons/icon.png",
+		"directories": {
+			"output": "dist",
+			"buildResources": "static"
 		},
 		"files": [
 			"index.js",
@@ -94,10 +94,12 @@
 			"target": [
 				{
 					"target": "nsis",
-					"arch": ["x64"]
+					"arch": [
+						"x64"
+					]
 				}
 			],
-			"executableName": "StepAlgo", 
+			"executableName": "StepAlgo",
 			"artifactName": "${productName}-Setup-${version}.${ext}"
 		},
 		"mac": {
