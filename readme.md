@@ -1,6 +1,6 @@
 # Step Algo
 
-A **Page-Replacement Algorithm Visualizer** aims to provide an interactive and educational tool for understanding how different page-replacement algorithms work. It helps users visualize the process of memory management in operating systems by simulating various algorithms such as First-In-First-Out (FIFO), Last Recently Used (LRU), and Optimal (OPT).
+A **Page-Replacement Algorithm Visualizer** that serves as an interactive and educational tool designed to demonstrate the workings of various page-replacement algorithms. It enables users to visualize memory management processes in operating systems by simulating algorithms like First-In-First-Out (FIFO), Least Recently Used (LRU), and Optimal (OPT).
 
 ---
 
@@ -12,11 +12,29 @@ A **Page-Replacement Algorithm Visualizer** aims to provide an interactive and e
 
 #### Information Tab
 
-![Information Tab](https://github.com/shoichiideologies/page-replacement-algorithm/blob/a167fe8ecf6882f4650fc205090added874ee6b1/images/1%20OS-case_study-page_replacement_algorithm-ss.png.png)
+![Information Tab](https://github.com/shoichiideologies/page-replacement-algorithm/blob/a167fe8ecf6882f4650fc205090added874ee6b1/images/1%20OS-case_study-page_replacement_algorithm-ss.png)
 
 ---
 
-## How to Install?
+## Know more about the Algorithms
+
+#### Virtual Memory
+
+![Virtual Memory](https://github.com/shoichiideologies/page-replacement-algorithm/blob/494c32d3a744683b3839d25305fdc4d1869ddf99/documentation/Case_Study-Chapter_10-Virtual_Memory.pdf)
+
+#### Page-Replacement Algorithms
+
+![Page-Replacement Algorithms](https://github.com/shoichiideologies/page-replacement-algorithm/blob/494c32d3a744683b3839d25305fdc4d1869ddf99/documentation/Case_Study-Chapter_10-Virtual_Memory-Page_Replacement.pdf)
+
+---
+
+## Documentation
+
+![Documenation](https://github.com/shoichiideologies/page-replacement-algorithm/blob/494c32d3a744683b3839d25305fdc4d1869ddf99/documentation/Miranda-Case_Study-OS-Documentation.pdf)
+
+---
+
+## App Installation
 
 Refer to the **Releases** section located under the **Code** tab, just below the **About** section. Download the file compatible with your system.
 
@@ -29,6 +47,10 @@ _macOS 10.13+, Linux, and Windows 7+ are supported (64-bit only)._
 **Windows**
 
 [**Download**](https://github.com/shoichiideologies/page-replacement-algorithm/releases/latest) the `.exe` file.
+
+**Linux**
+
+[**Download**](https://github.com/shoichiideologies/page-replacement-algorithm/releases/latest) the `.AppImage` file.
 
 ---
 
