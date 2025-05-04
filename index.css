@@ -90,7 +90,7 @@ header section {
 	border-radius: 30px;
 	background-color: rgb(228, 239, 231);
 	height: 35px;
-	width: 80%;
+	width: 90%;
 	gap: 10px;
 	display: flex;
 	justify-content: center;
@@ -131,6 +131,11 @@ header input[id="page-frames"] {
 header input[id="reference-page-string"]{
 	width: 350px;
 	font-family: monospace;
+}
+
+header input[id="number-of-page-string"]{
+	font-family: monospace;
+	margin-right: 30px;
 }
 
 section img {
@@ -199,17 +204,14 @@ main {
 
 main section{
 	background-color: inherit;
-	/* border-radius: 10px; */
 	height: auto;
 	width: 95%;
 	gap: 20px;
 	display: flex;
 	flex-direction: column;
-	/* padding: 10px 15px; */
 	gap: 10px;
-	border: 1px solid rgb(156, 156, 156);
-	/* box-shadow: 1px 4px 6px 3px rgba(0, 0, 0, 0.2); */
 	padding: 20px 0;
+	border: 1px solid rgb(156, 156, 156);
 }
 
 main section h2 {
@@ -269,23 +271,30 @@ main section p .page-faults-result{
 
 main section .simulation{
 	height: auto;
-	width: auto;
+	width: calc(100% - 30px);
 	background-color: rgb(253, 250, 246);
 	border-radius: 10px;
 	border: #333;
 	display: flex;
 	flex-direction: column;
-	gap: 5px;
-	padding: 7px 15px;
+	gap: 3px;
+	/* padding: 7px 15px; */
+	overflow-x: scroll ;
+	padding: auto;
+	margin: auto;
 }
+
 
 /* PAGE */
 main section .simulation .string-container {
     height: 40px;
-	width: 100%;
+	width: auto;
     border-radius: 15px;
     display: flex;
 	gap: 5px;
+	margin: auto;
+	padding: auto;
+
 }
 
 main section .simulation .string-container .string{
@@ -295,7 +304,8 @@ main section .simulation .string-container .string{
 	border-radius: 15px;
 	border-color: #000000;
 	background-color: rgba(228, 239, 231,1); 
-	width: calc(100% / 20);
+	/* width: calc(100% / 20); */
+	width: 60px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -303,12 +313,13 @@ main section .simulation .string-container .string{
 
 main section .simulation .page-container{
     height: auto;
-	width: 100%;
+	width: auto;
     display: flex;
     border-radius: 15px;
 	gap: 5px;
-	padding: 2px;
-	
+	margin: auto;
+	padding: auto;
+
 }
 
 main section .simulation .page-container .page{
@@ -317,7 +328,8 @@ main section .simulation .page-container .page{
 	height: auto;
 	border-radius: 15px;
 	background-color: rgba(228, 239, 231,1);
-	width: calc(100% / 20);
+	/* width: calc(100% / 20); */
+	width: 60px;
 	color: rgb(64, 64, 64);
 	display: flex;
 	flex-direction: column;

@@ -1,6 +1,5 @@
-
 // RANDOM PAGE-REFERENCE-STRING
-function generateReferenceString(length = 20, pageRange = 10) {
+function generateReferenceString(length = Math.floor(Math.random() * 26) + 5, pageRange = 10) {
 	const reference = [];
 	for (let i = 0; i < length; i++) {
 		const page = Math.floor(Math.random() * pageRange);
@@ -11,16 +10,40 @@ function generateReferenceString(length = 20, pageRange = 10) {
 }
 
 function displayReferenceString() {
-	const referenceArray = generateReferenceString();
-	const referenceString = referenceArray.join(',');
+	const countElement = document.querySelector('#number-of-page-string');
 	const inputElement = document.querySelector('#reference-page-string');
+	let length = Math.floor(Math.random() * 26) + 5; // Default random length
+
+	if (countElement) {
+		const inputValue = parseInt(countElement.value.trim(), 10);
+		if (!isNaN(inputValue) && inputValue >= 5 && inputValue <= 30) {
+			length = inputValue;
+		} else {
+			countElement.value = length;
+		}
+	}
+
+	const referenceArray = generateReferenceString(length);
+	const referenceString = referenceArray.join(',');
 
 	if (inputElement) {
 		inputElement.value = referenceString;
 	}
+
+	if (countElement) {
+		countElement.value = referenceArray.length;
+	}
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+	const errorMessage = document.querySelector('#error-message');
+	if (errorMessage) {
+		errorMessage.textContent =
+			'To begin, specify the number of page frames to allocate. Next, click the random button (dice icon) to generate a random page-reference string. You can also adjust the number of random page strings to generate. Finally, click the calculate button to visualize the results.';
+		errorMessage.style.color = 'black';
+		errorMessage.style.opacity = '1';
+	}
+
 	const randomImage = document.querySelector('#random-image');
 	if (randomImage) {
 		randomImage.addEventListener('click', displayReferenceString);
@@ -36,35 +59,43 @@ document.querySelector('#submit-button').addEventListener('click', () => {
 	const pageFramesValue = pageFramesInput.value.trim();
 	const errors = [];
 
-	// Validate Reference String
-	const validFormat = /^(\d,){19}\d$/;
+	// Validate Reference String (allow any length, only digits 0-9 and commas)
+	const validFormat = /^(\d,)*\d$/;
 	if (validFormat.test(referenceString)) {
 		const numbers = referenceString.split(',').map(Number);
-		if (numbers.length !== 20 || numbers.some(n => isNaN(n) || n < 0 || n > 9)) {
+		if (numbers.some(n => isNaN(n) || n < 0 || n > 9)) {
 			errors.push('Reference String values must be numbers between 0 and 9.');
 		}
 	} else {
-		errors.push('Reference String must have exactly 20 numbers (0-9) separated by commas, no letters or spaces.');
+		errors.push('Reference String must only contain numbers (0-9) separated by commas. No letters or spaces.');
 	}
 
-	// Validate Page Frames
+	// Validate Page Frames (positive integer, no upper limit)
 	const pageFramesNumber = Number(pageFramesValue);
-	if (isNaN(pageFramesNumber) || pageFramesNumber < 1 || pageFramesNumber > 19) {
-		errors.push('Page Frames ranging from 1 to 19 can only be accommodated in this program. Try Again.');
+	if (!/^\d+$/.test(pageFramesValue) || pageFramesNumber < 1) {
+		errors.push('Page Frames must be a positive whole number.');
 	}
 
 	// Display Errors
 	if (errors.length > 0) {
 		errorMessage.textContent = errors.join(' ');
 		errorMessage.style.opacity = '1';
+		errorMessage.style.color = 'red';
 	} else {
-		errorMessage.textContent = 'Error-Message';
+		errorMessage.textContent = 'To begin, specify the number of page frames to allocate. Next, click the random button (dice icon) to generate a random page-reference string. You can also adjust the number of random page strings to generate. Finally, click the calculate button to visualize the results.';
 		errorMessage.style.opacity = '0';
+		errorMessage.style.color = 'black';
+
 
 		const numbers = referenceString.split(',').map(Number);
 
-		// Display the reference string
+		// Rebuild .page and .string divs according to new length
 		const simulations = document.querySelectorAll('.simulation');
+		for (const simulation of simulations) {
+			createSimulationDivs(simulation, numbers.length);
+		}
+
+		// Display the reference string
 		for (const simulation of simulations) {
 			const stringContainer = simulation.querySelector('.string-container');
 			const stringDivs = stringContainer.querySelectorAll('.string');
@@ -299,21 +330,21 @@ function simulateOptimal(frames, frameCount, currentPage, futurePages) {
 	return changed; // Return whether page fault occurred
 }
 
-// CREATE 20 PAGES PROPERLY
-function createSimulationDivs(simulation) {
+// CREATE PAGES PROPERLY BASED ON COUNT
+function createSimulationDivs(simulation, count = 20) {
 	const stringContainer = simulation.querySelector('.string-container');
 	const pageContainer = simulation.querySelector('.page-container');
 
 	stringContainer.innerHTML = ''; // Clear only inside container
 	pageContainer.innerHTML = '';
 
-	for (let i = 0; i < 20; i++) {
+	for (let i = 0; i < count; i++) {
 		const stringDiv = document.createElement('div');
 		stringDiv.className = 'string'; // Use class, not id
 		stringContainer.append(stringDiv);
 	}
 
-	for (let i = 0; i < 20; i++) {
+	for (let i = 0; i < count; i++) {
 		const pageDiv = document.createElement('div');
 		pageDiv.className = 'page'; // Use class, not id
 		pageContainer.append(pageDiv);

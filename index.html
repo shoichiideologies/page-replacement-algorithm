@@ -18,13 +18,15 @@
 				<h1>Page Replacement Algorithm Visualizer</h1>
 				<section>
 					<label for="page-frames">Enter Page Frames:</label>
-					<input type="number" id="page-frames" value="3" min="1" max="19">
+					<input type="number" id="page-frames" value="3" min="1" max="99">
+					<label for="number-of-page-string">Page String: </label>
+					<input type="number" id="number-of-page-string"title="Enter the number of reference page strings" min="1" max="30">
 					<label for="reference-page-string">Random Reference Page String:</label>
-					<input type="text" id="reference-page-string" maxlength="100">
+					<input type="text" id="reference-page-string" maxlength="70">
 					<img src="./logo/random.png" alt="Random" id="random-image">
 				</section>
 				<button id="submit-button" title="Submit">Calculate</button>
-				<p id="error-message">Error Message</p>
+				<p id="error-message">To begin, specify the number of page frames to allocate. Next, click the random button (dice icon) to generate a random page-reference string. You can also adjust the number of random page strings to generate. Finally, click the calculate button to visualize the results.</p>
 			</header>
 			<main>
 				<section class="algorithm">
