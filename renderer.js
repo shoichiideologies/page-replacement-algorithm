@@ -107,7 +107,10 @@ document.querySelector('#submit-button').addEventListener('click', () => {
 
 		// Now simulate algorithms
 		const displayPageFrame = document.querySelector('#display-page-frame');
+		const displayPageReferenceStringLength = document.querySelector('#display-page-string-length');
+		const inputElement = document.querySelector('#reference-page-string');
 		displayPageFrame.textContent = pageFramesNumber;
+		displayPageReferenceStringLength.textContent = inputElement.value.trim().split(',').length;
 		simulateAlgorithms(numbers, pageFramesNumber);
 	}
 });
@@ -198,6 +201,7 @@ function simulateAlgorithms(referenceString, frameCount) {
 }
 
 function determineBestAlgorithm() {
+
 	const results = {
 		FIFO: fifoPageFaults,
 		LRU: lruPageFaults,
@@ -214,11 +218,11 @@ function determineBestAlgorithm() {
 	const outputElement = document.querySelector('#efficient-algo');
 
 	if (bestAlgorithms.length === 1) {
-		outputElement.textContent = `${bestAlgorithms[0]} is the most efficient with ${minFaults} page faults.`;
+		outputElement.textContent = `${bestAlgorithms[0]}. It is the most efficient with [${minFaults}] page faults.`;
 	} else if (bestAlgorithms.length === 3) {
 		// All tied — compare by complexity
 		outputElement.textContent
-      = `All algorithms have ${minFaults} page faults. Based on time and space complexity, `
+      = `LRU. Given that all algorithms have [${minFaults}] page faults. Based on time and space complexity, `
       + 'LRU is preferred because it performs well in practice and does not require future knowledge like Optimal.';
 	} else {
 		// Tie between 2 algorithms
@@ -226,15 +230,15 @@ function determineBestAlgorithm() {
 		let recommended = '';
 
 		if (bestAlgorithms.includes('LRU')) {
-			recommended = 'LRU is preferred due to better practical efficiency.';
+			recommended = 'LRU. This algorithm is preferred due to better practical efficiency.';
 		} else if (bestAlgorithms.includes('FIFO')) {
-			recommended = 'FIFO is preferred for its simplicity.';
+			recommended = 'FIFO. This algorithm is preferred for its simplicity.';
 		} else {
-			recommended = 'Optimal is theoretically best, but not practical in real-world systems.';
+			recommended = 'Optimal. This algorithm is the theoretically best, but not practical in real-world systems.';
 		}
 
 		outputElement.textContent
-      = `${list} are tied with ${minFaults} page faults. ${recommended}`;
+      = `${list}. They are tied with [${minFaults}] page faults. ${recommended}`;
 	}
 }
 
@@ -305,6 +309,7 @@ function simulateOptimal(frames, frameCount, currentPage, futurePages) {
 		if (frames.length < frameCount) {
 			frames.push(currentPage);
 		} else {
+			let neverUsedAgain = [];
 			let farthestIndex = -1;
 			let pageToReplace = null;
 
@@ -312,14 +317,20 @@ function simulateOptimal(frames, frameCount, currentPage, futurePages) {
 				const nextUse = futurePages.indexOf(page);
 
 				if (nextUse === -1) {
-					// This page is never used again → best to replace
-					farthestIndex = Infinity;
-					pageToReplace = page;
+					neverUsedAgain.push(page);
 				} else if (nextUse > farthestIndex) {
-					// Find page used farthest in future
 					farthestIndex = nextUse;
 					pageToReplace = page;
 				}
+			}
+
+			if (neverUsedAgain.length > 0) {
+				// Choose first found or random from neverUsedAgain
+				// To use first found:
+			    pageToReplace = neverUsedAgain[0];
+
+				// To use random selection instead, uncomment the following:
+				// pageToReplace = neverUsedAgain[Math.floor(Math.random() * neverUsedAgain.length)];
 			}
 
 			const replaceIndex = frames.indexOf(pageToReplace);
