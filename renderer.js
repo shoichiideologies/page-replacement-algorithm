@@ -54,26 +54,41 @@ document.addEventListener('DOMContentLoaded', () => {
 document.querySelector('#submit-button').addEventListener('click', () => {
 	const referenceInput = document.querySelector('#reference-page-string');
 	const pageFramesInput = document.querySelector('#page-frames');
+	const countElement = document.querySelector('#number-of-page-string');
 	const errorMessage = document.querySelector('#error-message');
 	const referenceString = referenceInput.value.trim();
 	const pageFramesValue = pageFramesInput.value.trim();
+	const countValue = countElement ? countElement.value.trim() : '';
 	const errors = [];
 
 	// Validate Reference String (allow any length, only digits 0-9 and commas)
 	const validFormat = /^(\d,)*\d$/;
-	if (validFormat.test(referenceString)) {
+	if (!validFormat.test(referenceString)) {
+		errors.push('Reference String must only contain numbers (0-9) separated by commas. No letters or spaces.');
+	} else {
 		const numbers = referenceString.split(',').map(Number);
 		if (numbers.some(n => isNaN(n) || n < 0 || n > 9)) {
 			errors.push('Reference String values must be numbers between 0 and 9.');
 		}
-	} else {
-		errors.push('Reference String must only contain numbers (0-9) separated by commas. No letters or spaces.');
+		if (numbers.length < 1 || numbers.length > 30) {
+			errors.push('Reference String must contain between 1 and 30 numbers.');
+		}
 	}
 
-	// Validate Page Frames (positive integer, no upper limit)
+	// Validate Page Frames (must be a number between 1 and 9)
 	const pageFramesNumber = Number(pageFramesValue);
-	if (!/^\d+$/.test(pageFramesValue) || pageFramesNumber < 1) {
-		errors.push('Page Frames must be a positive whole number.');
+	if (!/^\d+$/.test(pageFramesValue)) {
+		errors.push('Page Frames must be a valid number.');
+	} else if (pageFramesNumber < 1 || pageFramesNumber > 9) {
+		errors.push('Page Frames must be a number between 1 and 9.');
+	}
+
+	// Validate Number of Page String (must be a number between 1 and 30)
+	const countNumber = Number(countValue);
+	if (!/^\d+$/.test(countValue)) {
+		errors.push('Number of Page String must be a valid number.');
+	} else if (countNumber < 1 || countNumber > 30) {
+		errors.push('Number of Page String must be a number between 1 and 30.');
 	}
 
 	// Display Errors
@@ -85,7 +100,6 @@ document.querySelector('#submit-button').addEventListener('click', () => {
 		errorMessage.textContent = 'To begin, specify the number of page frames to allocate. Next, click the random button (dice icon) to generate a random page-reference string. You can also adjust the number of random page strings to generate. Finally, click the calculate button to visualize the results.';
 		errorMessage.style.opacity = '0';
 		errorMessage.style.color = 'black';
-
 
 		const numbers = referenceString.split(',').map(Number);
 
