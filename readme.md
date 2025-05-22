@@ -26,7 +26,7 @@ A **Page-Replacement Algorithm Visualizer** that serves as an interactive and ed
 
 ## Documentation
 
-[**StepAlgo: A Page-Replacement Algorithm Visualizer**](https://github.com/shoichiideologies/page-replacement-algorithm/blob/494c32d3a744683b3839d25305fdc4d1869ddf99/documentation/Miranda-Case_Study-OS-Documentation.pdf)
+[**StepAlgo: A Page-Replacement Algorithm Visualizer**](https://github.com/shoichiideologies/page-replacement-algorithm/blob/770c66a879d44d1aafe3b2e1b2ddf227bc5e7bb5/documentation/Miranda-Case_Study-OS-Documentation.pdf)
 
 ---
 
