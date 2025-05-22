@@ -8,11 +8,11 @@ A **Page-Replacement Algorithm Visualizer** that serves as an interactive and ed
 
 #### Computation Tab
 
-![Computation Tab](https://github.com/shoichiideologies/page-replacement-algorithm/blob/9e30c8f991e0690c42ef581be8dfeefed444f85f/images/2%20OS-case_study-page_replacement_algorithm-ss.png)
+![Computation Tab](https://github.com/shoichiideologies/page-replacement-algorithm/blob/d1aab2574c0c13bab0cfd70767f809421d7a0b79/images/2%20OS-case_study-page_replacement_algorithm-ss.png)
 
 #### Information Tab
 
-![Information Tab](https://github.com/shoichiideologies/page-replacement-algorithm/blob/f868007b8262fa41766ac6a79848a2ce895f1724/images/1%20OS-case_study-page_replacement_algorithm-ss.png)
+![Information Tab](https://github.com/shoichiideologies/page-replacement-algorithm/blob/d1aab2574c0c13bab0cfd70767f809421d7a0b79/images/1%20OS-case_study-page_replacement_algorithm-ss.png)
 
 ---
 
