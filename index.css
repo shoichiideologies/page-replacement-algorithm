@@ -68,7 +68,7 @@ nav p.active {
 
 header {
 	width: auto;
-	height: 100px;
+	height: auto;
 	text-align: center;
 	margin: 0 auto;
 	padding: 100px;
@@ -93,15 +93,22 @@ header section {
 	border-radius: 30px;
 	background-color: rgb(228, 239, 231);
 	height: 35px;
-	width: 90%;
+	width: auto;
 	gap: 10px;
+	display: flex;
+	gap: 5px;
+	padding: 10px 50px;
+	max-width: 80%;
+}
+
+header section .divide {
+	width: auto;
+	margin: 10px 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: row;
-	padding: 15px;
-	gap: 5px;
 }
+
 
 header label {
 	font-size: 14px;
@@ -160,6 +167,7 @@ header button{
 	color: #000000;
 	text-align: center;
 	width: 30%;
+	max-width: 400px;
 	height: 60px;
 	font-size: 14px;
 	font-weight: 400;
@@ -194,7 +202,7 @@ header button:hover{
 /* MAIN */
 main {
 	width: auto;
-	height: 100%;
+	height: auto;
 	text-align: center;
 	margin: 0 auto;
 	padding: 50px;
@@ -210,9 +218,6 @@ main section{
 	height: auto;
 	width: 95%;
 	gap: 20px;
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
 	padding: 20px 0;
 	border: 1px solid rgb(156, 156, 156);
 }
@@ -238,7 +243,7 @@ main section p{
 	display: flex;
 	align-items: right;
 	justify-content: right;
-	padding: 0 15px 8px 20px;
+	padding: 15px 15px 8px 20px;
 }
 
 main section p > span{
@@ -250,6 +255,7 @@ main section p > span{
 	text-align: center;
 	justify-self: center;
 	height: 30px;
+
 }
 
 main section p #page-faults, 
@@ -415,5 +421,68 @@ main section .simulation .page-container .page .page-results {
 	/* display: inline-block; */
 }
 
-	
+@media (max-width: 600px) {
 
+	header{
+		padding: 50px;
+		width: auto;
+	}
+
+	header section {
+	    display: flex;
+		flex-direction: column;
+		height: auto;
+		width: auto;
+	}
+
+	header section .divide {
+		width: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	header section #divide-random > *{
+		display: block;
+	}
+
+	header section #divide-random{
+		display: flex;
+		flex-direction: column;
+	}
+
+	header section #divide-random input{
+		width: 90%;
+	}
+
+	header section #divide-random #random-image{
+		margin: 15px 0 0 0;
+	}
+
+	header section .divide #divide-string{
+		width: 70%;
+		text-align: left;
+	}
+
+	header section .divide input{
+		width: 30%;
+		margin: 0;
+	}
+
+	header section #divide-random{
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	header section #divide-random > label{
+		text-align: left;
+		align-items: left;
+		justify-content: left;
+	}
+
+	header #submit-button{
+		width: auto;
+	}
+
+}
