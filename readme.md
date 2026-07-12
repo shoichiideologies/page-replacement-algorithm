@@ -1,61 +1,116 @@
-# Step Algo
+# StepAlgo
 
-A **Page-Replacement Algorithm Visualizer** that serves as an interactive and educational tool designed to demonstrate the workings of various page-replacement algorithms. It enables users to visualize memory management processes in operating systems by simulating algorithms like First-In-First-Out (FIFO), Least Recently Used (LRU), and Optimal (OPT).
+StepAlgo is an interactive desktop application for visualizing common page-replacement algorithms in operating systems. It helps students and developers understand how memory management decisions behave under different workload patterns by simulating FIFO, LRU, and Optimal replacement strategies.
 
----
+## Table of Contents
 
-## User Interface
+- [Description](#description)
+- [Preview](#preview)
+- [Tech Stack](#tech-stack)
+- [Repository Overview](#repository-overview)
+- [Features](#features)
+- [Installation Guide](#installation-guide)
+- [Usage](#usage)
+- [Constraints and Future Improvements](#constraints-and-future-improvements)
+- [License](#license)
 
-#### Computation Tab
+## Description
 
-![Computation Tab](https://github.com/shoichiideologies/page-replacement-algorithm/blob/d1aab2574c0c13bab0cfd70767f809421d7a0b79/images/2%20OS-case_study-page_replacement_algorithm-ss.png)
+This project was built as an educational tool for exploring memory paging behavior. Instead of relying only on static theory, users can enter a reference string, adjust the number of page frames, and compare how different algorithms respond to the same workload.
 
-#### Information Tab
+The application is packaged as an Electron desktop app and includes both a computational simulation view and supporting documentation for the operating systems concepts behind the algorithms.
 
-![Information Tab](https://github.com/shoichiideologies/page-replacement-algorithm/blob/d1aab2574c0c13bab0cfd70767f809421d7a0b79/images/1%20OS-case_study-page_replacement_algorithm-ss.png)
+## Preview
 
----
+| View             | Description                                                                                        |
+| ---------------- | -------------------------------------------------------------------------------------------------- |
+| Computation view | Displays the page-reference string and visualizes FIFO, LRU, and Optimal simulations side by side. |
+| Information view | Provides supporting educational context and explains the underlying operating systems concepts.    |
 
-## Know more about the Algorithms
+![Computation view](images/2%20OS-case_study-page_replacement_algorithm-ss.png)
 
-[**Operating System - Virtual Memory**](https://github.com/shoichiideologies/page-replacement-algorithm/blob/494c32d3a744683b3839d25305fdc4d1869ddf99/documentation/Case_Study-Chapter_10-Virtual_Memory.pdf)
+![Information view](images/1%20OS-case_study-page_replacement_algorithm-ss.png)
 
-[**Operating System - Page Replacement Algoritms**](https://github.com/shoichiideologies/page-replacement-algorithm/blob/494c32d3a744683b3839d25305fdc4d1869ddf99/documentation/Case_Study-Chapter_10-Virtual_Memory-Page_Replacement.pdf)
+## Tech Stack
 
----
+- Electron: Desktop application framework for packaging the app as a native experience.
+- JavaScript: Core simulation logic and UI interactions.
+- HTML and CSS: Structure and styling for the visual interface.
+- Node.js: Runtime for the Electron application and local packaging scripts.
+- electron-builder: Production packaging and distribution workflow.
 
-## Documentation
+## Repository Overview
 
-[**StepAlgo: A Page-Replacement Algorithm Visualizer**](https://github.com/shoichiideologies/page-replacement-algorithm/blob/770c66a879d44d1aafe3b2e1b2ddf227bc5e7bb5/documentation/Miranda-Case_Study-OS-Documentation.pdf)
+The repository is organized around a small Electron app:
 
----
+- index.html and index.css: Main application layout and styling.
+- renderer.js: Simulation logic for the page-replacement algorithms.
+- information.html and information.js: Educational content and supplementary information view.
+- menu.js and config.js: Application menu and configuration handling.
+- images/, logo/, static/, and icons/: Assets used by the UI and packaging process.
+- documentation/: Case-study and reference materials related to the operating systems topic.
 
-## App Installation
+## Features
 
-Refer to the **Releases** section located under the **Code** tab, just below the **About** section. Download the file compatible with your system.
+- Simulate FIFO, LRU, and Optimal page-replacement algorithms.
+- Compare page-fault counts for the same reference string and frame count.
+- Generate random reference strings for experimentation.
+- Display a visual breakdown of frame allocation across the simulation.
+- Provide supporting educational information in a dedicated information view.
 
-_macOS 10.13+, Linux, and Windows 7+ are supported (64-bit only)._
+## Installation Guide
 
-**macOS**
+### Prerequisites
 
-[**Download**](https://github.com/shoichiideologies/page-replacement-algorithm/releases/latest) the `.dmg` file.
+- Node.js 18 or newer
+- npm
 
-**Windows**
+### Steps
 
-[**Download**](https://github.com/shoichiideologies/page-replacement-algorithm/releases/latest) the `.exe` file.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/shoichiideologies/page-replacement-algorithm.git
+   cd page-replacement-algorithm
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the application locally:
+   ```bash
+   npm start
+   ```
 
-**Linux**
+### Build for distribution
 
-[**Download**](https://github.com/shoichiideologies/page-replacement-algorithm/releases/latest) the `.AppImage` file.
+To package the app for local distribution:
 
----
+```bash
+npm run dist
+```
 
-## Credits
+## Usage
 
-Credits to [Electron](https://electronjs.org).
+1. Open the application and enter the number of page frames.
+2. Provide or generate a reference page string.
+3. Click Calculate to run the simulations.
+4. Review the visual results and the page-fault comparison table to evaluate which algorithm performs best for the current input.
 
----
+## Constraints and Future Improvements
+
+Current limitations include:
+
+- The app focuses on three classic algorithms and does not yet include additional replacement strategies.
+- The interface is functional but could be improved with richer explanations, animations, and accessibility enhancements.
+- The current workflow is centered on desktop use; a web-based version could broaden accessibility.
+
+Potential future improvements:
+
+- Add more algorithms such as Second Chance and Clock.
+- Improve the educational experience with step-by-step annotations and performance explanations.
+- Provide saved scenarios, configurable workloads, and exportable results.
+- Refine the UI for improved responsiveness and usability.
 
 ## License
 
-This project is licensed under the GPL-3.0 license.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
