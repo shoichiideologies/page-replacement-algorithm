@@ -1,6 +1,6 @@
 # StepAlgo
 
-StepAlgo is an interactive desktop application for visualizing common page-replacement algorithms in operating systems. It helps students and developers understand how memory management decisions behave under different workload patterns by simulating FIFO, LRU, and Optimal replacement strategies.
+StepAlgo is an Electron-based desktop application for visualizing page-replacement algorithms in operating systems. It helps students and developers compare how FIFO, LRU, and Optimal strategies behave under the same workload by turning abstract memory-management concepts into an interactive simulation.
 
 ## Table of Contents
 
@@ -11,50 +11,51 @@ StepAlgo is an interactive desktop application for visualizing common page-repla
 - [Features](#features)
 - [Installation Guide](#installation-guide)
 - [Usage](#usage)
+- [Project Highlights](#project-highlights)
 - [Constraints and Future Improvements](#constraints-and-future-improvements)
 - [License](#license)
 
 ## Description
 
-This project was built as an educational tool for exploring memory paging behavior. Instead of relying only on static theory, users can enter a reference string, adjust the number of page frames, and compare how different algorithms respond to the same workload.
+This project was created as an educational tool for exploring memory paging and page-fault behavior. Instead of relying only on static theory, users can define a reference string, set the number of page frames, and compare the resulting behavior of multiple replacement algorithms side by side.
 
-The application is packaged as an Electron desktop app and includes both a computational simulation view and supporting documentation for the operating systems concepts behind the algorithms.
+The application combines a lightweight desktop interface with supporting educational context, making it suitable for coursework, demonstrations, and personal study.
 
 ## Preview
 
-| Preview                                                                         | Description                                                                                        |
-| ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| ![Computation view](images/2%20OS-case_study-page_replacement_algorithm-ss.png) | Displays the page-reference string and visualizes FIFO, LRU, and Optimal simulations side by side. |
-| ![Information view](images/1%20OS-case_study-page_replacement_algorithm-ss.png) | Provides supporting educational context and explains the underlying operating systems concepts.    |
+| Preview                                                                             | Description                                                                                                                                  |
+| ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![Main simulation view](images/2%20OS-case_study-page_replacement_algorithm-ss.png) | Shows the core comparison interface, including the reference string, page-frame input, and the simulated results for FIFO, LRU, and Optimal. |
+| ![Information view](images/1%20OS-case_study-page_replacement_algorithm-ss.png)     | Presents supporting educational material about page-replacement concepts and the operating systems context behind the simulation.            |
 
 ## Tech Stack
 
-| Technology       | Purpose                                                                     |
-| ---------------- | --------------------------------------------------------------------------- |
-| Electron         | Provides the desktop application shell and native runtime experience.       |
-| JavaScript       | Implements the simulation logic and user interaction behavior.              |
-| HTML and CSS     | Structures the interface and styles the visual layout.                      |
-| Node.js          | Serves as the runtime environment for the Electron app and package scripts. |
-| electron-builder | Packages the app for macOS, Linux, and Windows distribution.                |
+| Technology       | Purpose                                                                   |
+| ---------------- | ------------------------------------------------------------------------- |
+| Electron         | Provides the desktop application shell and native runtime experience.     |
+| JavaScript       | Implements the simulation logic, validation, and interactive UI behavior. |
+| HTML and CSS     | Structures the interface and styles the visual layout.                    |
+| Node.js          | Serves as the runtime environment for development and packaging scripts.  |
+| electron-builder | Packages the app for macOS, Linux, and Windows distribution.              |
 
 ## Repository Overview
 
-The repository is organized around a small Electron app:
+The repository is organized around a compact Electron application with separate concerns for interaction, simulation, and documentation:
 
-- index.html and index.css: Main application layout and styling.
-- renderer.js: Simulation logic for the page-replacement algorithms.
-- information.html and information.js: Educational content and supplementary information view.
-- menu.js and config.js: Application menu and configuration handling.
-- images/, logo/, static/, and icons/: Assets used by the UI and packaging process.
-- documentation/: Case-study and reference materials related to the operating systems topic.
+- index.html and index.css define the main application layout and presentation.
+- renderer.js contains the core simulation logic for FIFO, LRU, and Optimal algorithms.
+- information.html and information.js provide the educational companion view.
+- config.js and menu.js manage application configuration and desktop menu behavior.
+- images, logo, static, and icons hold assets used by the UI and packaging process.
+- documentation contains supporting reference material related to the project topic.
 
 ## Features
 
-- Simulate FIFO, LRU, and Optimal page-replacement algorithms.
+- Simulate FIFO, LRU, and Optimal page-replacement strategies.
 - Compare page-fault counts for the same reference string and frame count.
-- Generate random reference strings for experimentation.
-- Display a visual breakdown of frame allocation across the simulation.
-- Provide supporting educational information in a dedicated information view.
+- Generate random reference strings to explore different memory-access patterns.
+- Visualize frame allocation and page-fault outcomes within the interface.
+- Include a dedicated information view with educational context for the underlying concepts.
 
 ## Installation Guide
 
@@ -81,7 +82,7 @@ The repository is organized around a small Electron app:
 
 ### Build for distribution
 
-To package the app for local distribution:
+To package the app for local distribution, run:
 
 ```bash
 npm run dist
@@ -89,25 +90,33 @@ npm run dist
 
 ## Usage
 
-1. Open the application and enter the number of page frames.
-2. Provide or generate a reference page string.
+1. Launch the app and enter the number of page frames to allocate.
+2. Provide a reference string or generate a random one.
 3. Click Calculate to run the simulations.
-4. Review the visual results and the page-fault comparison table to evaluate which algorithm performs best for the current input.
+4. Review the output to compare which algorithm performs best for the current input.
+
+## Project Highlights
+
+The project is designed around a simple but effective educational workflow:
+
+- The comparison view presents multiple algorithms side by side so users can contrast behavior directly.
+- The interface includes input validation and random generation to make experimentation faster and more approachable.
+- The application is packaged as a desktop app rather than a static webpage, which makes it easier to present in classroom or demonstration settings.
 
 ## Constraints and Future Improvements
 
 Current limitations include:
 
-- The app focuses on three classic algorithms and does not yet include additional replacement strategies.
-- The interface is functional but could be improved with richer explanations, animations, and accessibility enhancements.
-- The current workflow is centered on desktop use; a web-based version could broaden accessibility.
+- The app focuses on three classic algorithms and does not yet include additional strategies such as Second Chance or Clock.
+- The interface is functional, but it could be improved with richer explanations, animations, and stronger accessibility support.
+- The current experience is centered on desktop use; a web-based version could broaden accessibility.
 
 Potential future improvements:
 
-- Add more algorithms such as Second Chance and Clock.
+- Add more replacement algorithms and comparison modes.
 - Improve the educational experience with step-by-step annotations and performance explanations.
-- Provide saved scenarios, configurable workloads, and exportable results.
-- Refine the UI for improved responsiveness and usability.
+- Support saved scenarios, configurable workloads, and exportable results.
+- Refine the UI for better responsiveness and usability.
 
 ## License
 

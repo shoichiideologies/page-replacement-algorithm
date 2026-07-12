@@ -1,43 +1,57 @@
 <!doctype html>
 <html lang="en">
-		<head>
+	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Electron boilerplate</title>
+		<title>StepAlgo | Page-Replacement Algorithm Visualizer</title>
 		<link rel="stylesheet" href="index.css">
-		<title>Page-Replacement Algotithm Visualizer</title>
 	</head>
 	<body>
-		<div class="container">
-			<nav>
+		<div class="app-shell">
+			<nav class="site-nav" aria-label="Primary navigation">
 				<section>
-					<p onclick="location.href='index.html'">Computation</p>
+					<p class="active" onclick="location.href='index.html'">Computation</p>
 					<p onclick="location.href='information.html'">Information</p>
 				</section>
 			</nav>
-			<header>
-				<h1>Page Replacement Algorithm Visualizer</h1>
-				<section>
-					<div class="divide">
-						<label for="page-frames" id="divide-string">Page Frames:</label>
+
+			<header class="hero">
+				<div class="hero-content">
+					<p class="eyebrow">Operating Systems Case Study</p>
+					<h1>Page Replacement Algorithm Visualizer</h1>
+					<p class="hero-copy">Compare FIFO, LRU, and Optimal replacement strategies against the same reference string and frame count.</p>
+				</div>
+
+				<section class="control-panel" aria-label="Simulation controls">
+					<div class="control-field">
+						<label for="page-frames">Page Frames</label>
 						<input type="number" id="page-frames" value="3" min="1" max="9">
 					</div>
-					<div class="divide">
-						<label for="number-of-page-string" id="divide-string">Page String: </label>
+					<div class="control-field">
+						<label for="number-of-page-string">Reference Length</label>
 						<input type="number" id="number-of-page-string" title="Enter the number of reference page strings" min="1" max="30" value="20">
 					</div>
-					<div class="divide" id="divide-random">
-						<label for="reference-page-string">Random Reference Page String:</label>
-						<input type="text" id="reference-page-string" maxlength="70" value="7,0,1,2,0,3,0,4,2,3,0,3,2,1,2,0,1,7,0,1">
-						<img src="./logo/random.png" alt="Random" id="random-image">
+					<div class="control-field control-field-wide">
+						<label for="reference-page-string">Reference String</label>
+						<div class="reference-input">
+							<input type="text" id="reference-page-string" maxlength="70" value="7,0,1,2,0,3,0,4,2,3,0,3,2,1,2,0,1,7,0,1">
+							<button type="button" id="random-button" class="icon-button" title="Generate random reference string" aria-label="Generate random reference string">
+								<img src="./logo/random.png" alt="" id="random-image">
+							</button>
+						</div>
 					</div>
+					<button id="submit-button" type="button" title="Submit">Calculate</button>
 				</section>
-				<button id="submit-button" title="Submit">Calculate</button>
-				<p id="error-message">To begin, specify the number of page frames to allocate. Next, click the random button (dice icon) to generate a random page-reference string. You can also adjust the number of random page strings to generate. Finally, click the calculate button to visualize the results.</p>
+
+				<p id="error-message">To begin, specify the number of page frames to allocate. Next, click the random button to generate a random page-reference string. You can also adjust the number of random page strings to generate. Finally, click the calculate button to visualize the results.</p>
 			</header>
+
 			<main>
 				<section class="algorithm">
-					<h2>First-In-First-Out (FIFO) Algorithm</h2>
+					<div class="algorithm-header">
+						<h2>First-In-First-Out</h2>
+						<p>FIFO</p>
+					</div>
 					<div class="simulation" id="fifo">
 						<div class="string-container">
 							<div class="string"></div>
@@ -48,15 +62,17 @@
 							</div>
 						</div>
 					</div>
-					<p>
-						<span>
-							<span id="page-faults">Page Faults: </span> 
-							<span class="page-faults-result" id="fifo-page-faults-result">0</span>
-						</span>
-					</p>				
+					<p class="fault-summary">
+						<span>Page Faults</span>
+						<span class="page-faults-result" id="fifo-page-faults-result">0</span>
+					</p>
 				</section>
+
 				<section class="algorithm">
-					<h2>Least Recently Used (LRU) Algorithm</h2>
+					<div class="algorithm-header">
+						<h2>Least Recently Used</h2>
+						<p>LRU</p>
+					</div>
 					<div class="simulation" id="lru">
 						<div class="string-container">
 							<div class="string"></div>
@@ -67,15 +83,17 @@
 							</div>
 						</div>
 					</div>
-					<p>
-						<span>
-							<span id="page-faults">Page Faults: </span> 
-							<span class="page-faults-result"id="lru-page-faults-result">0</span>
-						</span>
-					</p>				
+					<p class="fault-summary">
+						<span>Page Faults</span>
+						<span class="page-faults-result" id="lru-page-faults-result">0</span>
+					</p>
 				</section>
-				<section class="algorithm" >
-					<h2>Optimal (OPT) Algorithm</h2>
+
+				<section class="algorithm">
+					<div class="algorithm-header">
+						<h2>Optimal</h2>
+						<p>OPT</p>
+					</div>
 					<div class="simulation" id="optimal">
 						<div class="string-container">
 							<div class="string"></div>
@@ -86,41 +104,45 @@
 							</div>
 						</div>
 					</div>
-					<p>
-						<span>
-							<span id="page-faults">Page Faults: </span> 
-							<span class="page-faults-result" id="optimal-page-faults-result">0</span>
-						</span>
+					<p class="fault-summary">
+						<span>Page Faults</span>
+						<span class="page-faults-result" id="optimal-page-faults-result">0</span>
 					</p>
 				</section>
+
 				<section class="analysis">
-					<h2>Analysis</h2>
+					<div class="algorithm-header">
+						<h2>Analysis</h2>
+						<p>Result</p>
+					</div>
 					<table>
-						<tr>
-							<th>Algorithm</th>
-							<th>Page Fault</th>
-						</tr>
-						<tr>
-							<td>First-In-First-Out (FIFO)</td>
-							<td id="fifo-page-fault"></td>
-						</tr>
-						<tr>
-							<td>Least Recently Used (LRU)</td>
-							<td id="lru-page-fault"></td>
-						</tr>
-						<tr>
-							<td>Optimal (OPT)</td>
-							<td id="optimal-page-fault"></td>
-						</tr>
+						<thead>
+							<tr>
+								<th>Algorithm</th>
+								<th>Page Faults</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>First-In-First-Out (FIFO)</td>
+								<td id="fifo-page-fault">0</td>
+							</tr>
+							<tr>
+								<td>Least Recently Used (LRU)</td>
+								<td id="lru-page-fault">0</td>
+							</tr>
+							<tr>
+								<td>Optimal (OPT)</td>
+								<td id="optimal-page-fault">0</td>
+							</tr>
+						</tbody>
 					</table>
 					<p id="text">
-						<div id="div-inline" style="font-size: 14px; padding: 0 15px;">
-							The most efficient algorithm on allocating [<b id="display-page-frame"></b>] page frames with a reference page string of length [<b id="display-page-string-length"></b>] is <b id="efficient-algo"></b>
-						</div>
+						The most efficient algorithm on allocating <b id="display-page-frame">3</b> page frames with a reference page string of length <b id="display-page-string-length">20</b> is <b id="efficient-algo">ready to calculate.</b>
 					</p>
 				</section>
 			</main>
 		</div>
+		<script src="renderer.js"></script>
 	</body>
-	<script src="renderer.js"></script>
 </html>

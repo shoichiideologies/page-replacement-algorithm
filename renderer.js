@@ -38,15 +38,15 @@ function displayReferenceString() {
 document.addEventListener('DOMContentLoaded', () => {
 	const errorMessage = document.querySelector('#error-message');
 	if (errorMessage) {
-		errorMessage.textContent =
-			'To begin, specify the number of page frames to allocate. Next, click the random button (dice icon) to generate a random page-reference string. You can also adjust the number of random page strings to generate. Finally, click the calculate button to visualize the results.';
+		errorMessage.textContent
+			= 'To begin, specify the number of page frames to allocate. Next, click the random button (dice icon) to generate a random page-reference string. You can also adjust the number of random page strings to generate. Finally, click the calculate button to visualize the results.';
 		errorMessage.style.color = 'black';
 		errorMessage.style.opacity = '1';
 	}
 
-	const randomImage = document.querySelector('#random-image');
-	if (randomImage) {
-		randomImage.addEventListener('click', displayReferenceString);
+	const randomButton = document.querySelector('#random-button');
+	if (randomButton) {
+		randomButton.addEventListener('click', displayReferenceString);
 	}
 });
 
@@ -63,16 +63,17 @@ document.querySelector('#submit-button').addEventListener('click', () => {
 
 	// Validate Reference String (allow any length, only digits 0-9 and commas)
 	const validFormat = /^(\d,)*\d$/;
-	if (!validFormat.test(referenceString)) {
-		errors.push('Reference String must only contain numbers (0-9) separated by commas. No letters or spaces.');
-	} else {
+	if (validFormat.test(referenceString)) {
 		const numbers = referenceString.split(',').map(Number);
 		if (numbers.some(n => isNaN(n) || n < 0 || n > 9)) {
 			errors.push('Reference String values must be numbers between 0 and 9.');
 		}
-		if (numbers.length < 1 || numbers.length > 30) {
+
+		if (numbers.length === 0 || numbers.length > 30) {
 			errors.push('Reference String must contain between 1 and 30 numbers.');
 		}
+	} else {
+		errors.push('Reference String must only contain numbers (0-9) separated by commas. No letters or spaces.');
 	}
 
 	// Validate Page Frames (must be a number between 1 and 9)
@@ -215,7 +216,6 @@ function simulateAlgorithms(referenceString, frameCount) {
 }
 
 function determineBestAlgorithm() {
-
 	const results = {
 		FIFO: fifoPageFaults,
 		LRU: lruPageFaults,
@@ -234,10 +234,10 @@ function determineBestAlgorithm() {
 	if (bestAlgorithms.length === 1) {
 		outputElement.textContent = `${bestAlgorithms[0]}. It is the most efficient with [${minFaults}] page faults.`;
 	} else if (bestAlgorithms.length === 3) {
-		// All tied — compare by complexity
+		// All tied, so compare by complexity.
 		outputElement.textContent
-      = `LRU. Given that all algorithms have [${minFaults}] page faults. Based on time and space complexity, `
-      + 'LRU is preferred because it performs well in practice and does not require future knowledge like Optimal.';
+			= `LRU. Given that all algorithms have [${minFaults}] page faults. Based on time and space complexity, `
+			+ 'LRU is preferred because it performs well in practice and does not require future knowledge like Optimal.';
 	} else {
 		// Tie between 2 algorithms
 		const list = bestAlgorithms.join(' and ');
@@ -252,7 +252,7 @@ function determineBestAlgorithm() {
 		}
 
 		outputElement.textContent
-      = `${list}. They are tied with [${minFaults}] page faults. ${recommended}`;
+			= `${list}. They are tied with [${minFaults}] page faults. ${recommended}`;
 	}
 }
 
@@ -323,7 +323,7 @@ function simulateOptimal(frames, frameCount, currentPage, futurePages) {
 		if (frames.length < frameCount) {
 			frames.push(currentPage);
 		} else {
-			let neverUsedAgain = [];
+			const neverUsedAgain = [];
 			let farthestIndex = -1;
 			let pageToReplace = null;
 
@@ -341,7 +341,7 @@ function simulateOptimal(frames, frameCount, currentPage, futurePages) {
 			if (neverUsedAgain.length > 0) {
 				// Choose first found or random from neverUsedAgain
 				// To use first found:
-			    pageToReplace = neverUsedAgain[0];
+				pageToReplace = neverUsedAgain[0];
 
 				// To use random selection instead, uncomment the following:
 				// pageToReplace = neverUsedAgain[Math.floor(Math.random() * neverUsedAgain.length)];

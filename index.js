@@ -6,7 +6,6 @@ const {is} = require('electron-util');
 const unhandled = require('electron-unhandled');
 const debug = require('electron-debug');
 const contextMenu = require('electron-context-menu');
-const config = require('./config.js');
 const menu = require('./menu.js');
 
 unhandled();
@@ -83,6 +82,4 @@ app.on('activate', async () => {
 	await app.whenReady();
 	Menu.setApplicationMenu(menu);
 	mainWindow = await createMainWindow();
-
 })();
-

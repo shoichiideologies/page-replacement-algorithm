@@ -11,3 +11,19 @@ for (const p of navParagraphs) {
 		p.classList.add('active');
 	});
 }
+
+const glossaryLinks = document.querySelectorAll('a[href^="#"]');
+
+for (const link of glossaryLinks) {
+	link.addEventListener('click', event => {
+		const id = link.getAttribute('href').slice(1);
+		const target = document.getElementById(id);
+
+		if (target) {
+			event.preventDefault();
+			target.classList.add('highlight');
+			target.scrollIntoView({behavior: 'smooth', block: 'center'});
+			setTimeout(() => target.classList.remove('highlight'), 2000);
+		}
+	});
+}
