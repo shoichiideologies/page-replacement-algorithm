@@ -22,22 +22,20 @@ The application is packaged as an Electron desktop app and includes both a compu
 
 ## Preview
 
-| View             | Description                                                                                        |
-| ---------------- | -------------------------------------------------------------------------------------------------- |
-| Computation view | Displays the page-reference string and visualizes FIFO, LRU, and Optimal simulations side by side. |
-| Information view | Provides supporting educational context and explains the underlying operating systems concepts.    |
-
-![Computation view](images/2%20OS-case_study-page_replacement_algorithm-ss.png)
-
-![Information view](images/1%20OS-case_study-page_replacement_algorithm-ss.png)
+| Preview                                                                         | Description                                                                                        |
+| ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| ![Computation view](images/2%20OS-case_study-page_replacement_algorithm-ss.png) | Displays the page-reference string and visualizes FIFO, LRU, and Optimal simulations side by side. |
+| ![Information view](images/1%20OS-case_study-page_replacement_algorithm-ss.png) | Provides supporting educational context and explains the underlying operating systems concepts.    |
 
 ## Tech Stack
 
-- Electron: Desktop application framework for packaging the app as a native experience.
-- JavaScript: Core simulation logic and UI interactions.
-- HTML and CSS: Structure and styling for the visual interface.
-- Node.js: Runtime for the Electron application and local packaging scripts.
-- electron-builder: Production packaging and distribution workflow.
+| Technology       | Purpose                                                                     |
+| ---------------- | --------------------------------------------------------------------------- |
+| Electron         | Provides the desktop application shell and native runtime experience.       |
+| JavaScript       | Implements the simulation logic and user interaction behavior.              |
+| HTML and CSS     | Structures the interface and styles the visual layout.                      |
+| Node.js          | Serves as the runtime environment for the Electron app and package scripts. |
+| electron-builder | Packages the app for macOS, Linux, and Windows distribution.                |
 
 ## Repository Overview
 
