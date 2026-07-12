@@ -7,11 +7,8 @@ StepAlgo is an Electron-based desktop application for visualizing page-replaceme
 - [Description](#description)
 - [Preview](#preview)
 - [Tech Stack](#tech-stack)
-- [Repository Overview](#repository-overview)
 - [Features](#features)
 - [Installation Guide](#installation-guide)
-- [Usage](#usage)
-- [Project Highlights](#project-highlights)
 - [Constraints and Future Improvements](#constraints-and-future-improvements)
 - [License](#license)
 
@@ -37,25 +34,6 @@ The application combines a lightweight desktop interface with supporting educati
 | HTML and CSS     | Structures the interface and styles the visual layout.                    |
 | Node.js          | Serves as the runtime environment for development and packaging scripts.  |
 | electron-builder | Packages the app for macOS, Linux, and Windows distribution.              |
-
-## Repository Overview
-
-The repository is organized around a compact Electron application with separate concerns for interaction, simulation, and documentation:
-
-- index.html and index.css define the main application layout and presentation.
-- renderer.js contains the core simulation logic for FIFO, LRU, and Optimal algorithms.
-- information.html and information.js provide the educational companion view.
-- config.js and menu.js manage application configuration and desktop menu behavior.
-- images, logo, static, and icons hold assets used by the UI and packaging process.
-- documentation contains supporting reference material related to the project topic.
-
-## Features
-
-- Simulate FIFO, LRU, and Optimal page-replacement strategies.
-- Compare page-fault counts for the same reference string and frame count.
-- Generate random reference strings to explore different memory-access patterns.
-- Visualize frame allocation and page-fault outcomes within the interface.
-- Include a dedicated information view with educational context for the underlying concepts.
 
 ## Installation Guide
 
@@ -87,21 +65,6 @@ To package the app for local distribution, run:
 ```bash
 npm run dist
 ```
-
-## Usage
-
-1. Launch the app and enter the number of page frames to allocate.
-2. Provide a reference string or generate a random one.
-3. Click Calculate to run the simulations.
-4. Review the output to compare which algorithm performs best for the current input.
-
-## Project Highlights
-
-The project is designed around a simple but effective educational workflow:
-
-- The comparison view presents multiple algorithms side by side so users can contrast behavior directly.
-- The interface includes input validation and random generation to make experimentation faster and more approachable.
-- The application is packaged as a desktop app rather than a static webpage, which makes it easier to present in classroom or demonstration settings.
 
 ## Constraints and Future Improvements
 
